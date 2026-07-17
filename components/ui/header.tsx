@@ -3,15 +3,13 @@
 import { cn } from "@/lib/utils"
 import Link from "next/link"
 import { useEffect, useState } from "react"
-import { usePathname } from "next/navigation"
 import useScroll from "@/hooks/use-scroll"
 import { ModeToggle } from "./mode-toggle"
-import { Button } from "./button"
 import Image from "next/image"
+import { LanguageSwitcher } from "./language-switcher"
 
 export function Header() {
   const scrolled = useScroll(15);
-  const path = usePathname();
 
   const [open, setOpen] = useState(false)
 
@@ -40,14 +38,13 @@ export function Header() {
 
   if (!mounted) return <div className="w-full h-screen bg-transparent"></div>;
 
-  return path !== "/configurator/" ? (
-    <header
+  return  <header
       className={cn(
         "fixed inset-x-0 z-50 mx-auto flex max-w-full transform-gpu animate-slide-down-fade justify-center items-center overflow-hidden  border border-transparent  p-3 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1.03)] will-change-transform",
         open === true ? "h-52" : "h-20",
         scrolled || open === true
           ? "backdrop-blur-nav rounded-xl mt-5 max-w-7xl bg-background [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] shadow-xl shadow-black/5 dark:border-white/15 dark:bg-black"
-          : "bg-transparent",
+          : "bg-transparent backdrop-blur-3xl",
       )}
     >
       <div className="w-full md:my-auto">
@@ -98,7 +95,10 @@ export function Header() {
           </nav>
 
           <div className="hidden md:flex gap-x-2 items-center">
-            <ModeToggle />
+            <LanguageSwitcher />
+
+
+            <ModeToggle /> 
             <Link
               className="px-5 py-2 shadow bg-linear-to-br from-blue-500 to-indigo-500 text-white text-sm rounded-xl"
               href={"#"}
@@ -129,15 +129,5 @@ export function Header() {
         </nav>
       </div>
     </header>
-  ) :
-    <header className="h-20 hidden md:flex justify-between items-center px-5 z-50 w-full bg-background [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] fixed top-0">
-      <Button>
-        <Link href='/'>
-          Back To Home</Link>
-      </Button>
-
-      <div className="flex gap-5 items-center">
-        <ModeToggle />
-      </div>
-    </header>
+  
 }
