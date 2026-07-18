@@ -13,7 +13,7 @@ import { Globe } from "lucide-react";
 
 const languages = [
     { flag: "🇺🇸", name: "English" },
-    { flag: "🇮🇷", name: "فارسی" },
+    { flag: "🇮🇷", name: "Persian" },
     { flag: "🇫🇷", name: "Français" },
     { flag: "🇩🇪", name: "Deutsch" },
     { flag: "🇯🇵", name: "日本語" },

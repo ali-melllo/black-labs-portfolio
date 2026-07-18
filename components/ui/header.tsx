@@ -43,7 +43,7 @@ export function Header() {
         "fixed inset-x-0 z-50 mx-auto flex max-w-full transform-gpu animate-slide-down-fade justify-center items-center overflow-hidden  border border-transparent  p-3 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1.03)] will-change-transform",
         open === true ? "h-52" : "h-20",
         scrolled || open === true
-          ? "backdrop-blur-nav rounded-xl mt-5 max-w-7xl bg-background [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] shadow-xl shadow-black/5 dark:border-white/15 dark:bg-black"
+          ? "backdrop-blur-nav rounded-xl mt-5 max-w-[90em] bg-background [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] shadow-xl shadow-black/5 dark:border-white/15 dark:bg-black"
           : "bg-transparent backdrop-blur-3xl",
       )}
     >
@@ -75,20 +75,27 @@ export function Header() {
                 className="px-2 py-1 text-gray-900 dark:text-gray-50"
                 href={"#"}
               >
-                پروژه ها
+                Projects
               </Link>
 
               <Link
                 className="px-2 py-1 text-gray-900 dark:text-gray-50"
                 href={"#"}
               >
-                تماس با ما
+                Templates
+              </Link>
+
+              <Link
+                className="px-2 py-1 text-gray-900 dark:text-gray-50"
+                href={"#"}
+              >
+                Contact Us
               </Link>
               <Link
                 className="px-2 py-1 text-gray-900 dark:text-gray-50"
                 href={"#"}
               >
-               درباره ما
+               About Us
               </Link>
             </div>
 
@@ -100,10 +107,10 @@ export function Header() {
 
             <ModeToggle /> 
             <Link
-              className="px-5 py-2 shadow bg-linear-to-br from-blue-500 to-indigo-500 text-white text-sm rounded-xl"
+              className="px-5 py-2 shadow font-bold bg-linear-to-br from-blue-500 to-indigo-500 text-white text-sm rounded-xl"
               href={"#"}
             >
-              ثبت پروژه
+              Purchase Project
             </Link>
 
           </div>

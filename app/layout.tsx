@@ -14,7 +14,7 @@ const notoSans = Noto_Sans({ subsets: ['latin'], variable: '--font-sans' })
 const fontMono = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
-  weight: ["600", "700"]
+  weight: ["600", "700" , "800" ,"900"]
 })
 
 export default function RootLayout({
@@ -26,7 +26,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn("antialiased", bodyFont.variable, fontMono.variable, "font-sans", notoSans.variable, oxaniumHeading.variable)}
+      className={cn("antialiased", fontMono.variable, "font-sans", notoSans.variable, oxaniumHeading.variable)}
     >
       <body className="mb-96">
         <ThemeProvider>
