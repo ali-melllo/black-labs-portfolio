@@ -28,7 +28,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={cn("antialiased", fontMono.variable, "font-sans", notoSans.variable, oxaniumHeading.variable)}
     >
-      <body className="mb-96">
+      <body className="mb-96 overflow-x-hidden">
         <ThemeProvider>
           <Header />
           {children}
