@@ -5,7 +5,6 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils";
 import { Toaster } from "sonner";
 import { Header } from "@/components/ui/header";
-import { bodyFont } from "./font";
 
 const oxaniumHeading = Oxanium({ subsets: ['latin'], variable: '--font-heading' });
 
@@ -28,7 +27,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={cn("antialiased", fontMono.variable, "font-sans", notoSans.variable, oxaniumHeading.variable)}
     >
-      <body className="mb-96 overflow-x-hidden">
+      <body className="overflow-x-hidden relative">
         <ThemeProvider>
           <Header />
           {children}
