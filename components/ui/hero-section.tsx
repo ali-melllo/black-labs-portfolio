@@ -83,7 +83,7 @@ export const HeroSection = () => {
                         Order <AuroraText>Modern</AuroraText> Applications
                     </h1>
 
-                    <p className="max-w-10/12 text-xs md:text-base md:max-w-6/12 text-muted-foreground font-semibold text-center">
+                    <p className="max-w-11/12 text-xs md:text-base md:max-w-6/12 text-muted-foreground font-semibold text-center">
                         Turn your vision into a premium digital experience that captivates every visitor.
                         Custom-designed websites built for speed, performance, and measurable results.
                     </p>
@@ -103,7 +103,7 @@ export const HeroSection = () => {
 
 
 
-                <div className="absolute z-20 -bottom-5 h-[20em] md:h-[30em] 2xl:h-[40em] pt-10 w-full overflow-hidden ">
+                <div className="absolute z-20 -bottom-5 h-[25em] md:h-[30em] 2xl:h-[40em] pt-10 w-full overflow-hidden ">
                     <div className="relative h-full w-full flex-1">
                         <SplineScene
                             scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
@@ -139,9 +139,8 @@ export const HeroSection = () => {
                     Every Feature Needed
                 </h1>
 
-                <p className="max-w-10/12 text-xs md:text-base md:max-w-6/12 text-muted-foreground font-semibold text-center">
-                    Turn your vision into a premium digital experience that captivates every visitor.
-                    Custom-designed websites built for speed, performance, and measurable results.
+                <p className="max-w-11/12 text-xs md:text-base md:max-w-6/12 text-muted-foreground font-semibold text-center">
+                    Add Every Feature that is Required or Related To your Application Based on your needs
                 </p>
 
 
