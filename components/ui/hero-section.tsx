@@ -61,7 +61,7 @@ export const HeroSection = () => {
                     className="absolute inset-0 z-0"
                 />
 
-                <div className="absolute bg inset-0 z-1">
+                <div className="absolute inset-0 z-1">
                     <Particles
                         className="size-full md:size-auto"
                         size={0.5}
@@ -69,7 +69,7 @@ export const HeroSection = () => {
                     />
                 </div>
 
-                <div className="size-full flex flex-col gap-10 mt-10 md:mt-20 items-center">
+                <div className="size-full flex flex-col gap-5 md:gap-10 mt-5 md:mt-20 items-center">
                     <div
                         className={cn(
                             "flex z-30 h-10 text-nowrap items-center justify-center rounded-full border border-black/5 bg-neutral-100 text-sm! text-white transition-all hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800"
@@ -103,7 +103,7 @@ export const HeroSection = () => {
 
 
 
-                <div className="absolute z-20 -bottom-5 h-[25em] md:h-[30em] 2xl:h-[40em] pt-10 w-full overflow-hidden ">
+                <div className="absolute z-20 -bottom-5 h-[20em] md:h-[30em] 2xl:h-[40em] pt-10 w-full overflow-hidden ">
                     <div className="relative h-full w-full flex-1">
                         <SplineScene
                             scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
@@ -134,7 +134,7 @@ export const HeroSection = () => {
             </motion.section>
 
 
-            <div className="flex flex-col z-30 items-center gap-10 -mt-80 px-10">
+            <div className="flex flex-col z-30 items-center gap-10 -mt-64 md:-mt-80 px-10">
                 <h1 className="text-2xl font-bold bg-opacity-50 bg-linear-to-t from-neutral-400 to-neutral-900  dark:from-neutral-50 dark:to-neutral-400 bg-clip-text! text-transparent md:mt-10 tracking-tighter md:text-5xl lg:text-7xl">
                     Every Feature Needed
                 </h1>
@@ -150,7 +150,7 @@ export const HeroSection = () => {
                     <div className="h-full w-full md:w-4/12 flex flex-col gap-5">
 
                         {/* Top Right Section */}
-                        <div className="h-[40em] md:h-6/12  flex flex-col w-full bg-background [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] shadow-xl shadow-black/5 dark:border-white/15 rounded-2xl">
+                        <div className="h-[30em] md:h-6/12  flex flex-col w-full bg-background [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] shadow-xl shadow-black/5 dark:border-white/15 rounded-2xl">
                             <h1 className="text-xl z-20 px-5 pt-5 font-extrabold bg-opacity-50 bg-linear-to-t from-neutral-300 to-neutral-800  dark:from-neutral-200 dark:to-neutral-600 bg-clip-text! text-transparent  tracking-tighter">
                                 Every Plugins Required With Your App
                             </h1>
@@ -185,7 +185,7 @@ export const HeroSection = () => {
 
 
                         {/* Bottom Right Section */}
-                        <div className="h-6/12 relative overflow-hidden w-full bg-background [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] shadow-xl shadow-black/5 dark:border-white/15 rounded-2xl">
+                        <div className="h-[30em] md:h-6/12 relative overflow-hidden w-full bg-background [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] shadow-xl shadow-black/5 dark:border-white/15 rounded-2xl">
                             <h1 className="text-xl px-5 pt-5 font-bold bg-opacity-50 bg-linear-to-t from-neutral-400 to-neutral-900  dark:from-neutral-50 dark:to-neutral-400 bg-clip-text! text-transparent  tracking-tighter">
                                 World Wide Access To Your Application
                             </h1>
@@ -265,7 +265,7 @@ export const HeroSection = () => {
                             <h1 className="text-xl font-bold z-30 px-5 pt-5 bg-opacity-50 bg-linear-to-t from-neutral-400 to-neutral-900  dark:from-neutral-50 dark:to-neutral-400 bg-clip-text! text-transparent  tracking-tighter">
                                 Professional Dashboards For Your Panels
                             </h1>
-                            <p className="text-muted-foreground px-5 font-medium text-xs w-10/12 z-30 mt-2">Developing Multi cross Platforms around any existing devices from logic to design </p>
+                            <p className="text-muted-foreground px-5 font-medium text-xs w-10/12 z-30 mt-2">Developing Multi Access Panels And Dashboards For Your Business </p>
 
                             <div className="z-0 relative h-full w-full">
                                 <ChartAreaInteractive />

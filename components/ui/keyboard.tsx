@@ -503,7 +503,7 @@ export const Keyboard = ({
       <div
         ref={containerRef}
         className={cn(
-          "mx-auto w-fit [zoom:0.8] sm:[zoom:1.25] md:[zoom:1.5] lg:[zoom:1.75] xl:[zoom:2]",
+          "mx-auto w-fit zoom-[0.8] sm:zoom-[1.25] md:zoom-[1.5] lg:zoom-[1.75] xl:zoom-[2]",
           className,
         )}
       >
@@ -516,63 +516,63 @@ export const Keyboard = ({
 
 export const Keypad = () => {
   return (
-    <div className="h-full w-fit rounded-xl dark:bg-neutral-900 bg-neutral-200 p-1 shadow-sm ring-1 shadow-black/5 ring-black/5">
+    <div className="h-full w-fit rounded-xl dark:bg-neutral-700 bg-neutral-200 p-1 shadow-sm ring-1 shadow-black/5 ring-black/5">
       {/* Function Row */}
       <Row>
         <Key
           keyCode="Escape"
           containerClassName="rounded-tl-xl "
           className="w-10 rounded-tl-lg "
-          childrenClassName="items-start   justify-end pb-[2px] pl-[4px]"
+          childrenClassName="items-start  justify-end pb-[2px] pl-[4px]"
         >
           <span>esc</span>
         </Key>
         <Key keyCode="F1">
-          <IconBrightnessDown className="h-[6px] w-[6px]" />
+          <IconBrightnessDown className="h-1.5 w-1.5" />
           <span className="mt-1">F1</span>
         </Key>
         <Key keyCode="F2">
-          <IconBrightnessUp className="h-[6px] w-[6px]" />
+          <IconBrightnessUp className="h-1.5 w-1.5" />
           <span className="mt-1">F2</span>
         </Key>
         <Key keyCode="F3">
-          <IconTable className="h-[6px] w-[6px]" />
+          <IconTable className="h-1.5 w-1.5" />
           <span className="mt-1">F3</span>
         </Key>
         <Key keyCode="F4">
-          <IconSearch className="h-[6px] w-[6px]" />
+          <IconSearch className="h-1.5 w-1.5" />
           <span className="mt-1">F4</span>
         </Key>
         <Key keyCode="F5">
-          <IconMicrophone className="h-[6px] w-[6px]" />
+          <IconMicrophone className="h-1.5 w-1.5" />
           <span className="mt-1">F5</span>
         </Key>
         <Key keyCode="F6">
-          <IconMoon className="h-[6px] w-[6px]" />
+          <IconMoon className="h-1.5 w-1.5" />
           <span className="mt-1">F6</span>
         </Key>
         <Key keyCode="F7">
-          <IconPlayerTrackPrev className="h-[6px] w-[6px]" />
+          <IconPlayerTrackPrev className="h-1.5 w-1.5" />
           <span className="mt-1">F7</span>
         </Key>
         <Key keyCode="F8">
-          <IconPlayerSkipForward className="h-[6px] w-[6px]" />
+          <IconPlayerSkipForward className="h-1.5 w-1.5" />
           <span className="mt-1">F8</span>
         </Key>
         <Key keyCode="F9">
-          <IconPlayerTrackNext className="h-[6px] w-[6px]" />
+          <IconPlayerTrackNext className="h-1.5 w-1.5" />
           <span className="mt-1">F9</span>
         </Key>
         <Key keyCode="F10">
-          <IconVolume3 className="h-[6px] w-[6px]" />
+          <IconVolume3 className="h-1.5 w-1.5" />
           <span className="mt-1">F10</span>
         </Key>
         <Key keyCode="F11">
-          <IconVolume2 className="h-[6px] w-[6px]" />
+          <IconVolume2 className="h-1.5 w-1.5" />
           <span className="mt-1">F11</span>
         </Key>
         <Key keyCode="F12">
-          <IconVolume className="h-[6px] w-[6px]" />
+          <IconVolume className="h-1.5 w-1.5" />
           <span className="mt-1">F12</span>
         </Key>
         <Key containerClassName="rounded-tr-xl" className="rounded-tr-lg">
@@ -747,40 +747,40 @@ export const Keypad = () => {
           className="rounded-bl-lg"
         >
           <span>fn</span>
-          <IconWorld className="h-[6px] w-[6px]" />
+          <IconWorld className="h-1.5 w-1.5" />
         </ModifierKey>
         <ModifierKey keyCode="ControlLeft">
-          <IconChevronUp className="h-[6px] w-[6px]" />
+          <IconChevronUp className="h-1.5 w-1.5" />
           <span>control</span>
         </ModifierKey>
         <ModifierKey keyCode="AltLeft">
-          <OptionKey className="h-[6px] w-[6px]" />
+          <OptionKey className="h-1.5 w-1.5" />
           <span>option</span>
         </ModifierKey>
         <ModifierKey keyCode="MetaLeft" className="w-8">
-          <IconCommand className="h-[6px] w-[6px]" />
+          <IconCommand className="h-1.5 w-1.5" />
           <span>command</span>
         </ModifierKey>
         <Key keyCode="Space" className="w-[8.2rem]" />
         <ModifierKey keyCode="MetaRight" className="w-8">
-          <IconCommand className="h-[6px] w-[6px]" />
+          <IconCommand className="h-1.5 w-1.5" />
           <span>command</span>
         </ModifierKey>
         <ModifierKey keyCode="AltRight">
-          <OptionKey className="h-[6px] w-[6px]" />
+          <OptionKey className="h-1.5 w-1.5" />
           <span>option</span>
         </ModifierKey>
         {/* Arrow Keys */}
-        <div className="flex h-6 w-[4.9rem] items-center justify-end rounded-[4px] p-[0.5px]">
+        <div className="flex h-6 w-[4.9rem] items-center justify-end rounded-lg p-[0.5px]">
           <Key keyCode="ArrowLeft" className="h-6 w-6">
-            <IconCaretLeftFilled className="h-[6px] w-[6px]" />
+            <IconCaretLeftFilled className="h-1.5 w-1.5" />
           </Key>
           <div className="flex flex-col">
             <Key keyCode="ArrowUp" className="h-3 w-6">
-              <IconCaretUpFilled className="h-[6px] w-[6px]" />
+              <IconCaretUpFilled className="h-1.5 w-1.5" />
             </Key>
             <Key keyCode="ArrowDown" className="h-3 w-6">
-              <IconCaretDownFilled className="h-[6px] w-[6px]" />
+              <IconCaretDownFilled className="h-1.5 w-1.5" />
             </Key>
           </div>
           <Key
@@ -788,7 +788,7 @@ export const Keypad = () => {
             containerClassName="rounded-br-xl"
             className="h-6 w-6 rounded-br-lg"
           >
-            <IconCaretRightFilled className="h-[6px] w-[6px]" />
+            <IconCaretRightFilled className="h-1.5 w-1.5" />
           </Key>
         </div>
       </Row>
@@ -797,7 +797,7 @@ export const Keypad = () => {
 };
 
 const Row = ({ children }: { children: React.ReactNode }) => (
-  <div className="mb-[2px] flex w-full shrink-0 gap-[2px]">{children}</div>
+  <div className="mb-0.5 flex w-full shrink-0 gap-0.5">{children}</div>
 );
 
 const Key = ({
@@ -838,22 +838,22 @@ const Key = ({
   };
 
   return (
-    <div className={cn("rounded-[4px] p-[0.5px]", containerClassName)}>
+    <div className={cn("rounded-lg p-[0.5px] ", containerClassName)}>
       <button
         type="button"
         onMouseDown={handleMouseDown}
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseLeave}
         className={cn(
-          "flex h-6 w-6 cursor-pointer items-center justify-center rounded-[3.5px] bg-gray-100 shadow-[0px_0px_1px_0px_rgba(0,0,0,0.5),0px_1px_1px_0px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(255,255,255,1)_inset] transition-transform duration-75 active:scale-[0.98]",
+          "flex h-6 w-6 cursor-pointer items-center justify-center rounded-[3.5px] dark:bg-neutral-900 bg-gray-100 light:shadow-[0px_0px_1px_0px_rgba(0,0,0,0.5),0px_1px_1px_0px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(255,255,255,1)_inset] transition-transform duration-75 active:scale-[0.98]",
           isPressed &&
-            "scale-[0.98] bg-gray-100/80 shadow-[0px_0px_1px_0px_rgba(0,0,0,0.5),0px_1px_1px_0px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(255,255,255,0.5)]",
+            "scale-[0.98] bg-gray-100/80 light:shadow-[0px_0px_1px_0px_rgba(0,0,0,0.5),0px_1px_1px_0px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(255,255,255,0.5)]",
           className,
         )}
       >
         <div
           className={cn(
-            "flex h-full w-full flex-col items-center justify-center text-[5px] text-neutral-700",
+            "flex h-full w-full flex-col items-center justify-center text-[5px] dark:text-neutral-400 text-neutral-700",
             childrenClassName,
           )}
         >
@@ -900,20 +900,20 @@ const ModifierKey = ({
   };
 
   return (
-    <div className={cn("rounded-[4px] p-[0.5px]", containerClassName)}>
+    <div className={cn("rounded-lg p-[0.5px]", containerClassName)}>
       <button
         type="button"
         onMouseDown={handleMouseDown}
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseLeave}
         className={cn(
-          "flex h-6 w-6 cursor-pointer items-center justify-center rounded-[3.5px] bg-gray-100 shadow-[0px_0px_1px_0px_rgba(0,0,0,0.5),0px_1px_1px_0px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(255,255,255,1)_inset] transition-transform duration-75 active:scale-[0.98]",
+          "flex h-6 w-6 cursor-pointer items-center justify-center rounded-[3.5px] dark:bg-neutral-900 bg-gray-100 light:shadow-[0px_0px_1px_0px_rgba(0,0,0,0.5),0px_1px_1px_0px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(255,255,255,1)_inset] transition-transform duration-75 active:scale-[0.98]",
           isPressed &&
-            "scale-[0.98] bg-gray-100/80 shadow-[0px_0px_1px_0px_rgba(0,0,0,0.5),0px_1px_1px_0px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(255,255,255,0.5)]",
+            "scale-[0.98] bg-gray-100/80 light:shadow-[0px_0px_1px_0px_rgba(0,0,0,0.5),0px_1px_1px_0px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(255,255,255,0.5)]",
           className,
         )}
       >
-        <div className="flex h-full w-full flex-col items-start justify-between p-1 text-[5px] text-neutral-700">
+        <div className="flex h-full w-full flex-col items-start justify-between p-1 text-[5px] dark:text-neutral-400 text-neutral-700">
           {children}
         </div>
       </button>
