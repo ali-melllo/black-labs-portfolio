@@ -1,4 +1,5 @@
-/* eslint-disable react-hooks/purity */
+/* eslint-disable @next/next/no-img-element */
+ 
 "use client"
 
 import * as React from "react"
@@ -79,7 +80,7 @@ export default function ImageAnimate({
 
             {/* Glowing scan line, synced to the same sweep, with trailing sparkles */}
             <motion.div
-              className="absolute top-0 bottom-0 z-20 w-px bg-gradient-to-b from-transparent via-sky-500 to-transparent"
+              className="absolute top-0 bottom-0 z-20 w-px bg-linear-to-b from-transparent via-sky-500 to-transparent"
               style={{
                 boxShadow:
                   "0 0 20px rgba(59,130,246,0.9), 0 0 40px rgba(99,102,241,0.7), 0 0 60px rgba(139,92,246,0.5)",

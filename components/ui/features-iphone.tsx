@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import type { HTMLAttributes } from "react"
+import { PinListDemo } from "./pin-list-demo"
 
 const PHONE_WIDTH = 433
 const PHONE_HEIGHT = 882
@@ -22,7 +23,7 @@ export interface IphoneProps extends HTMLAttributes<HTMLDivElement> {
   videoSrc?: string
 }
 
-export function Iphone({
+export function FeaturesIphone({
   src,
   videoSrc,
   className,
@@ -41,8 +42,30 @@ export function Iphone({
       }}
       {...props}
     >
-     
-      { src && (
+      {hasVideo && (
+        <div
+          className="pointer-events-none absolute z-0 overflow-hidden"
+          style={{
+            left: `${LEFT_PCT}%`,
+            top: `${TOP_PCT}%`,
+            width: `${WIDTH_PCT}%`,
+            height: `${HEIGHT_PCT}%`,
+            borderRadius: `${RADIUS_H}% / ${RADIUS_V}%`,
+          }}
+        >
+          <video
+            className="block size-full object-cover"
+            src={videoSrc}
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+          />
+        </div>
+      )}
+
+      {!hasVideo && src && (
         <div
           className="pointer-events-none absolute z-0 overflow-hidden"
           style={{
@@ -56,10 +79,15 @@ export function Iphone({
           <img
             src={src}
             alt=""
-            className="block size-full object-cover"
+            className="block size-full object-cover object-top"
           />
         </div>
       )}
+
+      <div className="px-4">
+        <PinListDemo />
+
+      </div>
 
 
       <svg

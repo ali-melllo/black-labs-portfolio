@@ -20,8 +20,8 @@ import { Globe } from "./globe";
 import { MessageDemo } from "./chat-room";
 import { Keyboard } from "./keyboard";
 import { FlickeringGrid } from "./flickering-grid";
-import { Iphone } from "./iphone";
 import ImageAnimate from "./image-animate";
+import { FeaturesIphone } from "./features-iphone";
 
 const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
 
@@ -250,7 +250,7 @@ export const HeroSection = () => {
                                 <div className="absolute h-28 top-0 w-full bg-linear-to-b from-background to-transparent" />
 
                                 <div className="mt-10 mx-auto bottom-0 z-0 w-6/12 h-3/6">
-                                    <Iphone className="mx-auto" />
+                                    <FeaturesIphone className="mx-auto" />
                                 </div>
 
                             </div>
@@ -269,7 +269,6 @@ export const HeroSection = () => {
                             <div className="z-0 mt-5 relative h-full w-full">
                                 <ImageAnimate />
                             </div>
-
                         </div>
                     </div>
                 </div>

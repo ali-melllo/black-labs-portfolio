@@ -126,7 +126,7 @@ function PinList({
                 layout
                 key="all-label"
                 className={cn(
-                  'font-medium px-3 text-neutral-500 dark:text-neutral-300 text-sm mb-2',
+                  'font-medium px-3 text-neutral-500 dark:text-neutral-300 text-xs mb-2',
                   labelClassName,
                 )}
                 {...labelMotionProps}
@@ -149,14 +149,14 @@ function PinList({
                   layoutId={`item-${item.id}`}
                   onClick={() => toggleStatus(item.id)}
                   transition={transition}
-                  className="flex items-center justify-between gap-5 rounded-2xl bg-neutral-200 dark:bg-neutral-800 p-2 group"
+                  className="flex items-center justify-between gap-5 rounded-2xl bg-neutral-200 dark:bg-neutral-800 p-1 group"
                 >
                   <div className="flex items-center gap-2">
                     <div className="rounded-lg bg-background p-2">
                       <item.icon className="size-5 text-neutral-500 dark:text-neutral-400" />
                     </div>
                     <div>
-                      <div className="text-sm font-semibold">{item.name}</div>
+                      <div className="text-xs font-semibold">{item.name}</div>
                       <div className="text-xs text-neutral-500 dark:text-neutral-400 font-medium">
                         {item.info}
                       </div>
