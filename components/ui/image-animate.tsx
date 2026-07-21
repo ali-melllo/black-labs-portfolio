@@ -45,11 +45,11 @@ export default function ImageAnimate({
 }: ImageAnimateProps) {
 
   return (
-    <div className="overflow-hidden">
-      <div className="flex w-full items-center justify-center p-2 sm:p-10">
+    <div className="overflow-hidden flex justify-center items-center ">
+      <div className="flex w-full items-center justify-center p-2 sm:p-10 ">
         <div
           className={cn(
-            "relative h-60 w-52 rounded-lg bg-gray-200 p-4 dark:bg-neutral-800/50",
+            "relative h- w-52 rounded-lg bg-gray-200 p-4 dark:bg-neutral-800/50",
             className,
           )}
         >

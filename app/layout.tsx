@@ -27,7 +27,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={cn("antialiased", fontMono.variable, "font-sans", notoSans.variable, oxaniumHeading.variable)}
     >
-      <body className="overflow-x-hidden relative">
+      <body className="overflow-x-hidden flex relative">
         <ThemeProvider>
           <Header />
           {children}

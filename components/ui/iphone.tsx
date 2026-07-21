@@ -1,4 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 import type { HTMLAttributes } from "react"
+import { PinListDemo } from "./pin-list-demo"
 
 const PHONE_WIDTH = 433
 const PHONE_HEIGHT = 882
@@ -81,6 +83,12 @@ export function Iphone({
           />
         </div>
       )}
+
+      <div className="px-4">
+        <PinListDemo />
+
+      </div>
+
 
       <svg
         viewBox={`0 0 ${PHONE_WIDTH} ${PHONE_HEIGHT}`}
