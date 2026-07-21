@@ -22,6 +22,7 @@ import { Keyboard } from "./keyboard";
 import { FlickeringGrid } from "./flickering-grid";
 import { Iphone } from "./iphone";
 import { ChartAreaInteractive } from "./chart-sample";
+import ImageAnimate from "./image-animate";
 
 const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
 
@@ -260,18 +261,20 @@ export const HeroSection = () => {
                         </div>
 
 
-                        <div className="h-6/12 w-full bg-background [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] shadow-xl shadow-black/5 dark:border-white/15 rounded-2xl">
+                        <div className="h-6/12 w-full overflow-hidden bg-background [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] shadow-xl shadow-black/5 dark:border-white/15 rounded-2xl">
+                            
                             <h1 className="text-xl font-bold z-30 px-5 pt-5 bg-opacity-50 bg-linear-to-t from-neutral-400 to-neutral-900  dark:from-neutral-50 dark:to-neutral-400 bg-clip-text! text-transparent  tracking-tighter">
                                 Professional Dashboards For Your Panels
                             </h1>
                             <p className="text-muted-foreground px-5 font-medium text-xs w-10/12 z-30 mt-2">Developing Multi Access Panels And Dashboards For Your Business </p>
 
                             <div className="z-0 relative h-full w-full">
-                                <ChartAreaInteractive />
-                                {/* <div className="absolute z-10 rounded-r-2xl h-full right-0 w-20 bg-linear-to-l from-background to-transparent" />
-                                <div className="absolute z-10 rounded-l-2xl h-full left-0 w-20 bg-linear-to-r from-background to-transparent" /> */}
-                                <div className="absolute z-10 h-28 top-0 w-full bg-linear-to-b from-background to-transparent" />
-                                <div className="absolute rounded-b-2xl h-40 bottom-0 w-full bg-linear-to-t from-background to-transparent" />
+                                <ImageAnimate/>
+                                {/* <ChartAreaInteractive /> */}
+                                {/* <div className="absolute z-50 rounded-r-2xl h-full right-0 w-20 bg-linear-to-l from-background to-transparent" />
+                                <div className="absolute z-50 rounded-l-2xl h-full left-0 w-20 bg-linear-to-r from-background to-transparent" />
+                                <div className="absolute z-30 h-28 top-0 w-full bg-linear-to-b from-background to-transparent" /> */}
+                                {/* <div className="absolute z-30 rounded-b-2xl h-40 bottom-0 w-full bg-linear-to-t from-background to-transparent" /> */}
 
                             </div>
 
