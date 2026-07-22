@@ -47,7 +47,7 @@ export function IMac({ width = 600, height = 500, src, ...props }: MacProps) {
         d="M23.83,10.99h552.03c4.92,0,8.91,3.99,8.91,8.91v324.18H14.92V19.9c0-4.92,3.99-8.91,8.91-8.91Z"
       />
       <path
-        className="fill-[#7d7d82]"
+        className="fill-[#616164]"
         d="M23.83,343.94h552.03c4.92,0,8.91,3.99,8.91,8.91v48.47H14.92v-48.47c0-4.92,3.99-8.91,8.91-8.91Z"
         transform="translate(599.69 745.26) rotate(180)"
       />
