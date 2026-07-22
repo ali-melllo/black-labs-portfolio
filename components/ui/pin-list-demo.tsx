@@ -1,7 +1,6 @@
 'use client';
 
-import * as React from 'react';
-import { GitCommit, AlertTriangle, Box, KeyRound, Regex } from 'lucide-react';
+import { GitCommit, AlertTriangle, Box } from 'lucide-react';
 
 import { PinList } from '@/components/animate-ui/components/community/pin-list';
 

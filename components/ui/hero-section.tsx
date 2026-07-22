@@ -249,7 +249,7 @@ export const HeroSection = () => {
                                 <div className="absolute z-20 rounded-l-2xl h-full left-0 w-20 bg-linear-to-r from-background to-transparent" />
                                 <div className="absolute h-28 top-0 w-full bg-linear-to-b from-background to-transparent" />
 
-                                <div className="mt-10 mx-auto bottom-0 z-0 w-6/12 h-3/6">
+                                <div className="mt-10 mx-auto bottom-0 z-0 w-7/12 h-3/6">
                                     <FeaturesIphone className="mx-auto" />
                                 </div>
 

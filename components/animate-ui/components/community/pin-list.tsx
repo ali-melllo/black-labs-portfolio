@@ -86,7 +86,7 @@ function PinList({
           {pinned.length > 0 && (
             <div
               className={cn(
-                'space-y-3 mt-12 relative',
+                'space-y-3 mt-12 2xl:mt-15 relative',
                 togglingGroup === 'pinned' ? 'z-5' : 'z-10',
                 pinnedSectionClassName,
               )}

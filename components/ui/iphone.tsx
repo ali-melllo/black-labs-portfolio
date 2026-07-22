@@ -44,7 +44,7 @@ export function Iphone({
      
       { src && (
         <div
-          className="pointer-events-none absolute z-0 overflow-hidden"
+          className="pointer-events-none absolute z-0 bg-black overflow-hidden"
           style={{
             left: `${LEFT_PCT}%`,
             top: `${TOP_PCT}%`,
@@ -56,7 +56,7 @@ export function Iphone({
           <img
             src={src}
             alt=""
-            className="block size-full object-cover"
+            className="block my-2 size-full object-cover"
           />
         </div>
       )}
@@ -108,10 +108,10 @@ export function Iphone({
           mask={hasMedia ? "url(#screenPunch)" : undefined}
         />
 
-        <path
+        {/* <path
           d="M154 48.5C154 38.2827 162.283 30 172.5 30H259.5C269.717 30 278 38.2827 278 48.5C278 58.7173 269.717 67 259.5 67H172.5C162.283 67 154 58.7173 154 48.5Z"
           className="fill-[#262626]"
-        />
+        /> */}
         <path
           d="M249 48.5C249 42.701 253.701 38 259.5 38C265.299 38 270 42.701 270 48.5C270 54.299 265.299 59 259.5 59C253.701 59 249 54.299 249 48.5Z"
           className="fill-[#262626]"
