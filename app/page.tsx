@@ -38,11 +38,7 @@ export default function Page() {
         </div>
       </div>
 
-
-
     <TemplateDemo templates={TEMPLATES}/>
-
-
 
     </div>
 
