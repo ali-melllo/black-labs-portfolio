@@ -50,7 +50,7 @@ export default function TemplateDemo({ templates }: { templates: Items }) {
                             </div>
                         </div>
 
-                        <div className="w-full md:w-5/12 gap-5 h-full items-center justify-start flex flex-col">
+                        <div className="w-full md:w-5/12 gap-5 h-full items-center md:justify-center flex flex-col">
                             <h1 className="mt-10 md:mt-24 text-left w-full font-bold text-lg md:text-3xl">{template.title}</h1>
                             <p className="text-left md:w-10/12 mr-auto text-xs md:text-sm">{template.description}</p>
                             <div className="flex items-center mr-auto gap-2">
