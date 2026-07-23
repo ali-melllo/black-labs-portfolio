@@ -10,7 +10,7 @@ import { ChartColumn, Puzzle, Zap } from "lucide-react";
 export default function Page() {
   return (
 
-    <div className="flex flex-col bg-background z-20 justify-start min-h-svh md:max-w-7xl 2xl:max-w-[90em] mx-auto pb-96 relative">
+    <div className="flex flex-col z-20 justify- min-h-svh md:max-w-7xl 2xl:max-w-[90em] mx-auto pb-96 relative">
       <div className="hidden md:flex h-full w-3 absolute inset-y-0 z-30 -left-3 shadow-2xl border flex-col items-center justify-center overflow-hidden">
         <StripedPattern direction="right" className="fill-muted" />
       </div>

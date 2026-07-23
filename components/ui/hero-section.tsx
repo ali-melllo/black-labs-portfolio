@@ -135,7 +135,7 @@ export const HeroSection = () => {
 
 
             <div className="flex flex-col z-30 items-center gap-10 -mt-64 md:-mt-80 px-5 md:px-10">
-                <h1 className="text-2xl font-bold bg-opacity-50 bg-linear-to-t from-neutral-400 to-neutral-900  dark:from-neutral-50 dark:to-neutral-400 bg-clip-text! text-transparent md:mt-10 tracking-tighter md:text-5xl lg:text-7xl">
+                <h1 className="text-3xl font-bold bg-opacity-50 bg-linear-to-t from-neutral-400 to-neutral-900  dark:from-neutral-50 dark:to-neutral-400 bg-clip-text! text-transparent md:mt-10 tracking-tighter md:text-5xl lg:text-7xl">
                     Every Feature Needed
                 </h1>
 
@@ -144,11 +144,11 @@ export const HeroSection = () => {
                 </p>
 
 
-                <div className="h-[53em] w-full flex flex-col md:flex-row gap-5 mt-10">
+                <div className="md:h-[53em] w-full flex flex-col md:flex-row gap-5 mt-10">
                     <div className="h-full w-full md:w-4/12 flex flex-col gap-5">
 
                         {/* Top Right Section */}
-                        <div className="h-[30em] md:h-6/12  flex flex-col w-full bg-background [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] shadow-xl shadow-black/5 dark:border-white/15 rounded-2xl">
+                        <div className="h-[28em] md:h-6/12  flex flex-col w-full bg-background [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] shadow-xl shadow-black/5 dark:border-white/15 rounded-2xl">
                             <h1 className="text-xl z-20 px-5 pt-5 font-extrabold bg-opacity-50 bg-linear-to-t from-neutral-300 to-neutral-800  dark:from-neutral-200 dark:to-neutral-600 bg-clip-text! text-transparent  tracking-tighter">
                                 Every Plugins Required With Your App
                             </h1>
@@ -181,9 +181,8 @@ export const HeroSection = () => {
                         </div>
 
 
-
                         {/* Bottom Right Section */}
-                        <div className="h-[30em] md:h-6/12 relative overflow-hidden w-full bg-background [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] shadow-xl shadow-black/5 dark:border-white/15 rounded-2xl">
+                        <div className="h-[28em] md:h-6/12 relative overflow-hidden w-full bg-background [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] shadow-xl shadow-black/5 dark:border-white/15 rounded-2xl">
                             <h1 className="text-xl px-5 pt-5 font-bold bg-opacity-50 bg-linear-to-t from-neutral-400 to-neutral-900  dark:from-neutral-50 dark:to-neutral-400 bg-clip-text! text-transparent  tracking-tighter">
                                 World Wide Access To Your Application
                             </h1>

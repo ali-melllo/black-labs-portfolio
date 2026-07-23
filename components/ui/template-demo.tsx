@@ -18,7 +18,7 @@ type Items = {
 export default function TemplateDemo({ templates }: { templates: Items }) {
     return (
         <div className="flex flex-col items-center mt-48 w-full overflow-hidden">
-            <h1 className="text-2xl font-bold bg-opacity-50 bg-linear-to-t from-neutral-400 to-neutral-900  dark:from-neutral-50 dark:to-neutral-400 bg-clip-text! text-transparent md:mt-10 tracking-tighter md:text-5xl lg:text-7xl">
+            <h1 className="text-3xl font-bold bg-opacity-50 bg-linear-to-t from-neutral-400 to-neutral-900  dark:from-neutral-50 dark:to-neutral-400 bg-clip-text! text-transparent md:mt-10 tracking-tighter md:text-5xl lg:text-7xl">
                 Our Projects & Templates
             </h1>
 
@@ -43,16 +43,16 @@ export default function TemplateDemo({ templates }: { templates: Items }) {
                                 className={`w-6/12 absolute h-40 md:h-80 scale-120 z-10 ${isReversed ? "left-2 md:left-22" : "left-2 md:left-7"} bottom-0  md:bottom-10`} />
                             <MacbookPro
                                 src={template.srcDesktop}
-                                className={`w-6/12 absolute h-28 md:h-60 z-10  ${isReversed ? "left-28 md:left-72 2xl:left-78" : "left-28 md:left-63"} bottom-0`}
+                                className={`w-6/12 absolute h-32 md:h-60 z-10  ${isReversed ? "left-38 md:left-72 2xl:left-78" : "left-38 md:left-63"} -bottom-5 md:bottom-0`}
                             />
-                            <div className={`w-20 md:w-40 absolute  ${isReversed ? "left-[14em] md:left-[28em] 2xl:left-[33em]" : "left-[14em] md:left-[28em]"} top-10 md:top-24 z-0`}>
+                            <div className={`w-20 md:w-40 absolute  ${isReversed ? "left-[19em] md:left-[28em] 2xl:left-[33em]" : "left-[19em] md:left-[28em]"} top-10 md:top-24 z-0`}>
                                 <Iphone src={template.srcMobile} />
                             </div>
                         </div>
 
                         <div className="w-full md:w-5/12 gap-5 h-full items-center justify-start flex flex-col">
                             <h1 className="mt-10 md:mt-24 text-left w-full font-bold text-lg md:text-3xl">{template.title}</h1>
-                            <p className="text-left w-10/12 mr-auto text-xs md:text-sm">{template.description}</p>
+                            <p className="text-left md:w-10/12 mr-auto text-xs md:text-sm">{template.description}</p>
                             <div className="flex items-center mr-auto gap-2">
                                 {template.tags.map((tag, i) => (
                                     <span key={`tag-template-${i}`} className="rounded-4xl text-nowrap px-2 py-1 font-medium text-xs bg-background flex justify-center items-center [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] shadow-xl">{tag}</span>
