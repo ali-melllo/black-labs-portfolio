@@ -1,10 +1,16 @@
 import { IMac } from "@/components/ui/imac";
 import { Iphone } from "@/components/ui/iphone";
 import { MacbookPro } from "@/components/ui/macbook-demo";
-import { DollarSignIcon, Eye } from "lucide-react";
+import { DollarSignIcon, Eye, Search } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-
+import {
+    animate,
+    motion,
+    useMotionTemplate,
+    useMotionValue,
+} from "framer-motion";
+import { useEffect } from "react";
 
 type Items = {
     srcDesktop: string;
@@ -15,7 +21,33 @@ type Items = {
     tags: string[]
 }[]
 
+const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
+
 export default function TemplateDemo({ templates }: { templates: Items }) {
+
+
+    const color = useMotionValue(COLORS_TOP[0]);
+
+    useEffect(() => {
+        const controls = animate(color, COLORS_TOP, {
+            ease: "easeInOut",
+            duration: 10,
+            repeat: Infinity,
+            repeatType: "mirror",
+        });
+
+        return () => controls.stop();
+    }, [color]);
+
+    const aurora = useMotionTemplate`
+    radial-gradient(
+      160% 160% at 50% 0%,
+      transparent 35%,
+      ${color}
+    )
+  `;
+
+
     return (
         <div className="flex flex-col items-center mt-48 w-full overflow-hidden">
             <h1 className="text-3xl font-bold bg-opacity-50 bg-linear-to-t from-neutral-400 to-neutral-900  dark:from-neutral-50 dark:to-neutral-400 bg-clip-text! text-transparent md:mt-10 tracking-tighter md:text-5xl lg:text-7xl">
@@ -73,6 +105,36 @@ export default function TemplateDemo({ templates }: { templates: Items }) {
                     </div>
                 );
             })}
+
+            <motion.section className="relative min-h-[50vh] w-full z-10 overflow-hidden bg-background">
+                <motion.div
+                    aria-hidden
+                    style={{
+                        backgroundImage: aurora,
+                    }}
+                    className="absolute inset-0"
+                />
+                <div className="w-full relative flex justify-center items-center md:mt-20">
+                    <button
+                    
+                    className={`text-sm md:text-base w-full mx-10 md:w-80 font-bold text-background rounded-xl flex gap-2 hover:scale-105 transition-all duration-300 justify-center items-center h-12  bg-foreground  shadow-xl`}>
+                        <Search size={15} />
+                        Browse All Projects
+                    </button>
+
+
+                </div>
+            </motion.section>
+            <motion.section className="relative min-h-[50vh] rotate-180 w-full z-10 overflow-hidden bg-background">
+                <motion.div
+                    aria-hidden
+                    style={{
+                        backgroundImage: aurora,
+                    }}
+                    className="absolute inset-0"
+                />
+            </motion.section>
+
         </div>
     )
 }

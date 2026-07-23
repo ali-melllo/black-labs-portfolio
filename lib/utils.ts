@@ -21,5 +21,13 @@ export const TEMPLATES = [
     title: "3D Configurator For Home Extensions",
     description: "A 3D Configurator Web Application using next js , tailwind project configured with shadcn and modern components to choose from 3D assets and manual selection for your house customization with real time pricing & multi language support and more ...",
     tags: ["Next Js", "Tailwind", "Shadcn", "I18n", "Redux" , "SMTP"]
+  },
+  {
+    srcDesktop: "/assets/images/templates/nft-template-desktop.webp",
+    srcMobile: "/assets/images/templates/nft-template-mobile.webp",
+    url: "https://adesanya.vercel.app/",
+    title: "NFT & Digital Assets Crypto Marketplace",
+    description: "Web3 marketplace Application using next js , tailwind project configured with shadcn and modern components integrated with AI & Phantom wallet for payments supporting multi payments methods different assets types",
+    tags: ["Next Js", "Tailwind", "Shadcn", "I18n", "RTK" , "Phantom" , " Web3"]
   }
 ]
