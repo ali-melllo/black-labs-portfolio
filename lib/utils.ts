@@ -18,7 +18,7 @@ export const TEMPLATES = [
     srcDesktop: "/assets/images/templates/configurator-template-desktop.webp",
     srcMobile: "/assets/images/templates/configurator-template-mobile.webp",
     url: "https://configurator-gamma-opal.vercel.app/en/",
-    title: "3D Configurator For Home Extensions",
+    title: "3D Configurator For Home  interior & exterior design",
     description: "A 3D Configurator Web Application using next js , tailwind project configured with shadcn and modern components to choose from 3D assets and manual selection for your house customization with real time pricing & multi language support and more ...",
     tags: ["Next Js", "Tailwind", "Shadcn", "I18n", "Redux" , "SMTP"]
   },

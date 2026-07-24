@@ -69,25 +69,25 @@ export default function TemplateDemo({ templates }: { templates: Items }) {
                     <div
                         key={`template-${i}`}
                         className={cn(
-                            "flex flex-col md:flex-row w-full items-center md:h-[30em] justify-between px-10 md:mt-20",
+                            "flex flex-col md:flex-row w-full items-center md:h-[40em] justify-between px-10 gap-y-20 md:mt-40",
                             isReversed && " flex-col md:flex-row-reverse"
                         )}
                     >
-                        <div className={`w-full md:w-6/12 relative h-80 md:h-full flex`}>
+                        <div className={`w-full md:w-6/12 relative h-80 md:h-full flex items-center  overflow-visible`}>
                             <IMac
                                 src={template.srcDesktop}
-                                className={`w-6/12 absolute h-40 md:h-80 scale-120 z-10 ${isReversed ? "left-2 md:left-22" : "left-2 md:left-7"} bottom-0  md:bottom-10`} />
+                                className={`w-6/12 absolute h-40 md:h-80 scale-120 md:scale-110 z-10 ${isReversed ? "left-2 md:left-22" : "left-2 md:left-7"} bottom-0 md:bottom-1 `} />
                             <MacbookPro
                                 src={template.srcDesktop}
-                                className={`w-6/12 absolute h-32 md:h-60 z-10  ${isReversed ? "left-38 md:left-72 2xl:left-78" : "left-38 md:left-63"} -bottom-5 md:bottom-0`}
+                                className={`w-6/12 absolute h-32 md:h-60 z-10  ${isReversed ? "left-38 md:left-72 2xl:left-78" : "left-38 md:left-63"} -bottom-5 md:-bottom-5 `}
                             />
-                            <div className={`w-20 md:w-40 absolute  ${isReversed ? "left-[19em] md:left-[28em] 2xl:left-[33em]" : "left-[19em] md:left-[28em]"} top-10 md:top-24 z-0`}>
+                            <div className={`w-20 md:w-36 absolute ${isReversed ? "left-[19em] md:left-[28em] 2xl:left-[33em]" : "left-[19em] md:left-[28em]"} top-10 md:top-0 z-0`}>
                                 <Iphone src={template.srcMobile} />
                             </div>
                         </div>
 
                         <div className="w-full md:w-5/12 gap-5 h-full items-center md:justify-center flex flex-col">
-                            <h1 className="mt-10 md:mt-24 text-left w-full font-bold text-lg md:text-3xl">{template.title}</h1>
+                            <h1 className="mt- text-left w-full font-bold text-lg md:text-3xl">{template.title}</h1>
                             <p className="text-left md:w-10/12 mr-auto text-xs md:text-sm">{template.description}</p>
                             <div className="flex items-center mr-auto gap-2">
                                 {template.tags.map((tag, i) => (
@@ -147,6 +147,7 @@ export default function TemplateDemo({ templates }: { templates: Items }) {
 
 
             </motion.section>
+            
             <div className="h-full -mt-80 z-30 w-full place-content-center relative px-4">
                 <section className=" mx-auto grid max-w-3xl">
                     <h2 className="mb-6 text-center font-bold text-lg text-muted-foreground tracking-tight md:text-4xl">
