@@ -1,3 +1,5 @@
+"use client"
+
 import { IMac } from "@/components/ui/imac";
 import { Iphone } from "@/components/ui/iphone";
 import { MacbookPro } from "@/components/ui/macbook-demo";
@@ -11,6 +13,8 @@ import {
     useMotionValue,
 } from "framer-motion";
 import { useEffect } from "react";
+import { CompaniesList } from "./companies-list";
+import { LogoCloud } from "./collabration";
 
 type Items = {
     srcDesktop: string;
@@ -106,7 +110,7 @@ export default function TemplateDemo({ templates }: { templates: Items }) {
                 );
             })}
 
-            <motion.section className="relative min-h-[50vh] w-full z-10 overflow-hidden bg-background">
+            <motion.section className="relative min-h-[50vh] w-full z-20 overflow- bg-background">
                 <motion.div
                     aria-hidden
                     style={{
@@ -116,14 +120,21 @@ export default function TemplateDemo({ templates }: { templates: Items }) {
                 />
                 <div className="w-full relative flex justify-center items-center md:mt-20">
                     <button
-                    
-                    className={`text-sm md:text-base w-full mx-10 md:w-80 font-bold text-background rounded-xl flex gap-2 hover:scale-105 transition-all duration-300 justify-center items-center h-12  bg-foreground  shadow-xl`}>
+
+                        className={`text-sm md:text-base w-full mx-10 md:w-80 font-bold text-background rounded-xl flex gap-2 hover:scale-105 transition-all duration-300 justify-center items-center h-12  bg-foreground  shadow-xl`}>
                         <Search size={15} />
                         Browse All Projects
                     </button>
 
 
+
                 </div>
+
+                <div className="absolute top-70 2xl:top-96 z-60 w-full h-80">
+                    <CompaniesList className="rotate- bg-transparent! top-80" />
+                </div>
+
+
             </motion.section>
             <motion.section className="relative min-h-[50vh] rotate-180 w-full z-10 overflow-hidden bg-background">
                 <motion.div
@@ -133,8 +144,26 @@ export default function TemplateDemo({ templates }: { templates: Items }) {
                     }}
                     className="absolute inset-0"
                 />
-            </motion.section>
 
+
+            </motion.section>
+            <div className="h-full -mt-80 z-30 w-full place-content-center relative px-4">
+                <section className=" mx-auto grid max-w-3xl">
+                    <h2 className="mb-6 text-center font-bold text-lg text-muted-foreground tracking-tight md:text-4xl">
+                        Companies we{" "}
+                        <span className="font-semibold text-primary">collaborate</span> with.
+                    </h2>
+
+                    <LogoCloud className="mt-20" />
+
+
+                </section>
+
+                <div className="absolute z-50 h-60 right-0 top-55 w-64 bg-linear-to-l from-background to-transparent" />
+                <div className="absolute z-50 h-60 left-0 top-55 w-64 bg-linear-to-r from-background to-transparent" />
+
+
+            </div>
         </div>
     )
 }
