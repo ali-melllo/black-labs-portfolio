@@ -1,6 +1,7 @@
 "use client"
 
 import { StripedPattern } from "@/components/magicui/striped-pattern";
+import FooterPreview from "@/components/ui/footer";
 import { HeroSection } from "@/components/ui/hero-section";
 import TemplateDemo from "@/components/ui/template-demo";
 import { TEMPLATES } from "@/lib/utils";
@@ -10,7 +11,7 @@ import { ChartColumn, Puzzle, Zap } from "lucide-react";
 export default function Page() {
   return (
 
-    <div className="flex flex-col z-20 justify- min-h-svh md:max-w-7xl 2xl:max-w-[90em] mx-auto pb-96 relative">
+    <div className="flex flex-col z-20 justify- min-h-svh md:max-w-7xl 2xl:max-w-[90em] mx-auto relative">
       <div className="hidden md:flex h-full w-3 absolute inset-y-0 z-30 -left-3 shadow-2xl border flex-col items-center justify-center overflow-hidden">
         <StripedPattern direction="right" className="fill-muted" />
       </div>
@@ -38,8 +39,10 @@ export default function Page() {
         </div>
       </div>
 
-    <TemplateDemo templates={TEMPLATES}/>
+      <TemplateDemo templates={TEMPLATES} />
 
+
+      <FooterPreview />
     </div>
 
   )
