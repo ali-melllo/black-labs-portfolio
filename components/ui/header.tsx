@@ -59,7 +59,7 @@ export function Header() {
             <Image
               width={50}
               height={50}
-              src={"/assets/images/logo.jpg"}
+              src={"/assets/images/logo.webp"}
               alt={"Black Labs"}
               className=" w-full h-full rounded-full"
             />

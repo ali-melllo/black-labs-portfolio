@@ -20,6 +20,7 @@ import AiIntegration from "./ai-integration";
 import { DottedMap } from "./dotted-map";
 import AnalyticsCard from "./analytics-demo";
 import Reviews from "./reviews";
+import EffortlessScheduling from "./schedule";
 
 type Items = {
     srcDesktop: string;
@@ -192,6 +193,9 @@ export default function TemplateDemo({ templates }: { templates: Items }) {
             <div className="mt-40 mb-60 ">
                 <Reviews />
             </div>
+
+
+            <EffortlessScheduling/>
 
         </div>
     )

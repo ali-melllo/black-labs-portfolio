@@ -97,7 +97,7 @@ const ReviewCard = ({
 
 export default function Reviews() {
   return (
-    <section className="z-0 ml-15">
+    <section className="z-0 ">
       <div className="my-container mb-10">
         <div className="flex flex-col items-center justify-center relative">
           {/* Header Section */}
@@ -105,12 +105,12 @@ export default function Reviews() {
             Reviews & Feedbacks About US
           </h1>
 
-          <p className="max-w-11/12 mt-3 text-xs md:text-sm md:max-w-8/12 text-muted-foreground font-semibold text-center">
+          <p className="max-w-11/12 mt-5 text-xs md:text-base md:max-w-8/12 text-muted-foreground font-semibold text-center">
             See What People Think about our work and Performance
           </p>
 
           {/* Desktop Masonry Grid */}
-          <div className="hidden lg:flex justify-between gap-5 mt-20">
+          <div className="hidden lg:flex ml-17 justify-between gap-5 mt-20">
             {/* Column 1 */}
             <div className="flex w-4/12 lg:flex-col gap-5">
               <ReviewCard
@@ -137,7 +137,7 @@ export default function Reviews() {
               <div className="translate-x-8 -translate-y-7">
                 <Image
                   loading="lazy"
-                  className="size-90 scale-125 rounded-4xl"
+                  className="size-90 scale-110 rounded-4xl"
                   src="/assets/images/reviews.webp"
                   alt="Planingo"
                   width={300}

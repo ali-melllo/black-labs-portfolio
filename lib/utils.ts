@@ -14,14 +14,14 @@ export const TEMPLATES = [
     description: "A next js , tailwind project configured with shadcn and modern components supporting PWA connected to global movie database which provides updated and all existing movies and series with features like trailer watch , actors , seasons check , reviews & more ...",
     tags: ["Next Js", "Tailwind", "Shadcn", "MovieDB", "Redux"]
   },
-  {
-    srcDesktop: "/assets/images/templates/configurator-template-desktop.webp",
-    srcMobile: "/assets/images/templates/configurator-template-mobile.webp",
-    url: "https://configurator-gamma-opal.vercel.app/en/",
-    title: "3D Configurator For Home  interior & exterior design",
-    description: "A 3D Configurator Web Application using next js , tailwind project configured with shadcn and modern components to choose from 3D assets and manual selection for your house customization with real time pricing & multi language support and more ...",
-    tags: ["Next Js", "Tailwind", "Shadcn", "I18n", "Redux" , "SMTP"]
-  },
+  // {
+  //   srcDesktop: "/assets/images/templates/configurator-template-desktop.webp",
+  //   srcMobile: "/assets/images/templates/configurator-template-mobile.webp",
+  //   url: "https://configurator-gamma-opal.vercel.app/en/",
+  //   title: "3D Configurator For Home  interior & exterior design",
+  //   description: "A 3D Configurator Web Application using next js , tailwind project configured with shadcn and modern components to choose from 3D assets and manual selection for your house customization with real time pricing & multi language support and more ...",
+  //   tags: ["Next Js", "Tailwind", "Shadcn", "I18n", "Redux" , "SMTP"]
+  // },
   {
     srcDesktop: "/assets/images/templates/nft-template-desktop.webp",
     srcMobile: "/assets/images/templates/nft-template-mobile.webp",
