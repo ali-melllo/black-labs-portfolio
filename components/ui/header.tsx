@@ -50,7 +50,7 @@ export function Header() {
     <div className="w-full md:my-auto">
       <div className="relative flex  items-center justify-between">
         <Link
-          href={"#"}
+          href={"/"}
           className="flex items-center gap-x-2 "
           aria-label="Home">
           <span className="sr-only">Company logo</span>
@@ -80,7 +80,7 @@ export function Header() {
 
             <Link
               className="px-2 py-1 text-gray-900 dark:text-gray-50"
-              href={"#"}
+              href={"/blogs"}
             >
               Blogs
             </Link>
@@ -102,7 +102,7 @@ export function Header() {
         </nav>
 
         <div className="hidden md:flex gap-x-2 items-center">
-          <LanguageSwitcher />
+          {/* <LanguageSwitcher /> */}
 
 
           <ModeToggle />

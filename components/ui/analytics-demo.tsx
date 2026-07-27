@@ -2,7 +2,7 @@ import React from 'react';
 
 const AnalyticsCard = () => {
   return (
-    <div className="p-8 rounded-xl group">
+    <div className="pt-8 px-5 rounded-xl group">
       <div className="h-full rounded-xl z-40 max-w-[16rem] mx-auto dark:bg-[#2828284d] bg-[#2828282b] mask-[radial-gradient(50%_60%_at_50%_50%,white_0%,transparent_100%)]">
         <div className="p-8 overflow-hidden h-full">
           <div className="flex flex-col gap-4 items-center justify-center h-full relative">

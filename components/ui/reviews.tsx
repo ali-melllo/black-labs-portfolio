@@ -80,7 +80,7 @@ const ReviewCard = ({
 
   return (
     <div
-      className={`flex p-4 border shadow border-[#F3F4F6] rounded-3xl flex-col gap-2 ${className}`}
+      className={`flex p-4 border shadow border-[#F3F4F6] rounded-4xl flex-col gap-2 ${className}`}
     >
       <div className="flex items-center gap-1">
         {[...Array(rating)].map((_, i) => (
@@ -137,7 +137,7 @@ export default function Reviews() {
               <div className="translate-x-8 -translate-y-7">
                 <Image
                   loading="lazy"
-                  className="size-90 scale-110 rounded-4xl"
+                  className="size-90 rounded-4xl"
                   src="/assets/images/reviews.webp"
                   alt="Planingo"
                   width={300}

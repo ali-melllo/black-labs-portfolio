@@ -21,6 +21,7 @@ import { DottedMap } from "./dotted-map";
 import AnalyticsCard from "./analytics-demo";
 import Reviews from "./reviews";
 import EffortlessScheduling from "./schedule";
+import FeaturesGrid from "./features-grid";
 
 type Items = {
     srcDesktop: string;
@@ -64,7 +65,7 @@ export default function TemplateDemo({ templates }: { templates: Items }) {
                 Our Projects & Templates
             </h1>
 
-            <p className="max-w-11/12 mt-10 text-xs md:text-base  text-muted-foreground font-semibold text-center">
+            <p className=" mt-10 text-xs md:text-base  text-muted-foreground font-semibold text-center">
                 Browse In What We have Made so Far and choose On Your Own preference to your needs
             </p>
 
@@ -127,8 +128,9 @@ export default function TemplateDemo({ templates }: { templates: Items }) {
             </div>
 
 
-
-
+            <div className="mt-40">
+                <FeaturesGrid />
+            </div>
 
             <motion.section className="relative min-h-[50vh] mt-30 w-full z-20 overflow-hidden bg-background">
                 <motion.div
@@ -186,16 +188,16 @@ export default function TemplateDemo({ templates }: { templates: Items }) {
             </motion.section>
 
 
-
-            <AiIntegration />
-
+            <div className="mt-20 ">
+                <AiIntegration />
+            </div>
 
             <div className="mt-40 mb-60 ">
                 <Reviews />
             </div>
 
 
-            <EffortlessScheduling/>
+            <EffortlessScheduling />
 
         </div>
     )
