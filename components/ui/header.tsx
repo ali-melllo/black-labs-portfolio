@@ -6,7 +6,6 @@ import { useEffect, useState } from "react"
 import useScroll from "@/hooks/use-scroll"
 import { ModeToggle } from "./mode-toggle"
 import Image from "next/image"
-import { LanguageSwitcher } from "./language-switcher"
 
 export function Header() {
   const scrolled = useScroll(15);
@@ -87,7 +86,7 @@ export function Header() {
 
             <Link
               className="px-2 py-1 text-gray-900 dark:text-gray-50"
-              href={"#"}
+              href={"contactUs"}
             >
               Contact Us
             </Link>
