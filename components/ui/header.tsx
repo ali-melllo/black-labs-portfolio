@@ -92,9 +92,9 @@ export function Header() {
             </Link>
             <Link
               className="px-2 py-1 text-gray-900 dark:text-gray-50"
-              href={"#"}
+              href={"/about"}
             >
-              About Us
+              About
             </Link>
           </div>
 
@@ -109,7 +109,7 @@ export function Header() {
             className="px-5 py-2 shadow font-bold bg-linear-to-br from-blue-500 to-indigo-500 text-white text-sm rounded-xl"
             href={"#"}
           >
-            Purchase Project
+            Request Project
           </Link>
 
         </div>

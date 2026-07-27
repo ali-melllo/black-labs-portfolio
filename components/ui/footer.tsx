@@ -7,8 +7,8 @@ const FooterPreview = () => {
       <div className="overflow-hidden rounded-lg bg-white shadow-sm dark:bg-neutral-950">
         <div className="w-full ">
           <div className="preview relative flex min-h-87.5 w-full justify-center items-center">
-            <div className="relative w-full overflow-hidden  border-neutral-100 bg-white px-8 py-10 dark:border-white/10 dark:bg-neutral-950">
-              <div className="mx-auto flex max-w-7xl flex-col items-start justify-between text-sm text-neutral-500 sm:flex-row md:px-8">
+            <div className="relative w-full overflow-hidden  border-neutral-100 bg-white  py-10 dark:border-white/10 dark:bg-neutral-950">
+              <div className="mx-auto flex max-w- flex-col items-start justify-between text-sm text-neutral-500 sm:flex-row md:px-8">
                 <div>
                   <div className="mr-0 mb-4 md:mr-4 md:flex">
                     <div className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black">

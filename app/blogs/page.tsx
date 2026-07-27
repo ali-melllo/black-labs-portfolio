@@ -127,7 +127,7 @@ export default function BlogsPage() {
               
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-4 2xl:grid-cols-5 gap-6 gap-y-8">
+            <div className="grid grid-cols-1 lg:grid-cols-4 2xl:grid-cols-5 gap-6 gap-y-8 px-5">
               {filteredPosts.map((post, index) => (
                 <motion.div
                   key={post.id}

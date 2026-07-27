@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 
 const ContactSection = () => {
@@ -37,7 +38,7 @@ const ContactSection = () => {
                   </div>
                   <div className="absolute inset-x-0 bottom-0 z-30 mx-auto h-4 w-full rounded-full bg-neutral-600 opacity-50 blur-lg" />
                   <div className="absolute inset-x-0 bottom-0 mx-auto h-px w-[60%] bg-linear-to-r from-transparent via-blue-500 to-transparent" />
-                  <div className="absolute inset-x-0 bottom-0 mx-auto h-px w-[60%] bg-linear-to-r from-transparent via-blue-600 to-transparent dark:h-[8px] dark:blur-sm" />
+                  <div className="absolute inset-x-0 bottom-0 mx-auto h-px w-[60%] bg-linear-to-r from-transparent via-blue-600 to-transparent dark:h-2 dark:blur-sm" />
                 </div>
               </div>
 
@@ -57,44 +58,44 @@ const ContactSection = () => {
               </div>
 
               {/* World map with floating badge */}
-              <div className="div relative mt-20 flex w-[600px] flex-shrink-0 -translate-x-10 items-center justify-center [perspective:800px] [transform-style:preserve-3d] sm:-translate-x-0 lg:-translate-x-32">
+              <div className="div relative mt-20 flex w-150 shrink-0 -translate-x-10 items-center justify-center perspective-midrange transform-3d sm:translate-x-0 lg:-translate-x-32">
                 <div
-                  className="pointer-events-none absolute z-[60] flex h-40 w-96 items-center justify-center opacity-100 transition duration-500 top-0 right-1"
+                  className="pointer-events-none absolute z-60 flex h-40 w-96 items-center justify-center opacity-100 transition duration-500 top-0 right-1"
                   style={{ transform: "translateZ(1px)" }}
                 >
                   <div className="h-full w-full">
                     <div className="absolute inset-x-0 top-0 z-20 mx-auto inline-block w-fit rounded-lg bg-neutral-200 px-2 py-1 text-xs font-normal text-neutral-700 dark:bg-neutral-900 dark:text-white">
                       We are here
-                      <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-blue-400/0 via-blue-400/90 to-blue-400/0 transition-opacity duration-500" />
+                      <span className="absolute bottom-0 left-4.5 h-px w-[calc(100%-2.25rem)] bg-linear-to-r from-blue-400/0 via-blue-400/90 to-blue-400/0 transition-opacity duration-500" />
                     </div>
                     <div
                       className="absolute top-1/2 left-1/2 mt-4 ml-[0.09375rem] -translate-x-1/2 -translate-y-1/2"
                       style={{ perspective: "800px", transform: "rotateX(70deg) translateZ(0px)" }}
                     >
                       <div
-                        className="absolute top-1/2 left-1/2 h-20 w-20 -translate-x-1/2 -translate-y-1/2 rounded-[50%] bg-sky-500/[0.08] shadow-[0_8px_16px_rgb(0_0_0/0.4)] dark:bg-sky-500/[0.2]"
+                        className="absolute top-1/2 left-1/2 h-20 w-20 -translate-x-1/2 -translate-y-1/2 rounded-[50%] bg-sky-500/8 shadow-[0_8px_16px_rgb(0_0_0/0.4)] dark:bg-sky-500/20"
                         style={{ opacity: 0, transform: "scale(0.446259)" }}
                       />
                       <div
-                        className="absolute top-1/2 left-1/2 h-20 w-20 -translate-x-1/2 -translate-y-1/2 rounded-[50%] bg-sky-500/[0.08] shadow-[0_8px_16px_rgb(0_0_0/0.4)] dark:bg-sky-500/[0.2]"
+                        className="absolute top-1/2 left-1/2 h-20 w-20 -translate-x-1/2 -translate-y-1/2 rounded-[50%] bg-sky-500/8 shadow-[0_8px_16px_rgb(0_0_0/0.4)] dark:bg-sky-500/20"
                         style={{ opacity: 0, transform: "scale(0.998062)" }}
                       />
                       <div
-                        className="absolute top-1/2 left-1/2 h-20 w-20 -translate-x-1/2 -translate-y-1/2 rounded-[50%] bg-sky-500/[0.08] shadow-[0_8px_16px_rgb(0_0_0/0.4)] dark:bg-sky-500/[0.2]"
+                        className="absolute top-1/2 left-1/2 h-20 w-20 -translate-x-1/2 -translate-y-1/2 rounded-[50%] bg-sky-500/8 shadow-[0_8px_16px_rgb(0_0_0/0.4)] dark:bg-sky-500/20"
                         style={{ opacity: 0, transform: "scale(0.816293)" }}
                       />
                     </div>
-                    <div className="absolute right-1/2 bottom-1/2 h-20 w-px translate-y-[14px] bg-gradient-to-b from-transparent to-blue-500 blur-[2px]" />
-                    <div className="absolute right-1/2 bottom-1/2 h-20 w-px translate-y-[14px] bg-gradient-to-b from-transparent to-blue-500" />
-                    <div className="absolute right-1/2 bottom-1/2 z-40 h-[4px] w-[4px] translate-x-[1.5px] translate-y-[14px] rounded-full bg-blue-600 blur-[3px]" />
-                    <div className="absolute right-1/2 bottom-1/2 z-40 h-[2px] w-[2px] translate-x-[0.5px] translate-y-[14px] rounded-full bg-blue-300" />
+                    <div className="absolute right-1/2 bottom-1/2 h-20 w-px translate-y-3.5 bg-linear-to-b from-transparent to-blue-500 blur-[2px]" />
+                    <div className="absolute right-1/2 bottom-1/2 h-20 w-px translate-y-3.5 bg-linear-to-b from-transparent to-blue-500" />
+                    <div className="absolute right-1/2 bottom-1/2 z-40 h-1 w-1 translate-x-[1.5px] translate-y-3.5 rounded-full bg-blue-600 blur-[3px]" />
+                    <div className="absolute right-1/2 bottom-1/2 z-40 h-0.5 w-0.5 translate-x-[0.5px] translate-y-3.5 rounded-full bg-blue-300" />
                   </div>
                 </div>
                 <img
                   width="500"
                   height="500"
                   alt="world map"
-                  className="[transform:rotateX(45deg)_translateZ(0px)] dark:invert dark:filter"
+                  className="transform-[rotateX(45deg)_translateZ(0px)] dark:invert dark:filter"
                   src="https://assets.aceternity.com/pro/world.svg"
                 />
               </div>
