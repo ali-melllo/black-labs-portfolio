@@ -162,7 +162,7 @@ export default function BlogsPage() {
                     </CardHeader>
                     <CardContent className="flex-1">
                       <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                        <div className="flex items-center gap-1">
+                        <div className="flex items-center text-xs line-clamp-1 gap-1">
                           <User className="h-4 w-4" />
                           {post.author}
                         </div>
@@ -173,8 +173,8 @@ export default function BlogsPage() {
                       </div>
                     </CardContent>
                     <CardFooter>
-                      <Button  className="w-full group rounded-4xl">
-                        <Link href={`/blogs/${post.id}`} className="flex justify-center items-center">
+                      <Button  className="w-full group rounded-4xl cursor-pointer">
+                        <Link href={`/blogs/${post.id}`} className="flex justify-center size-full cursor-pointer items-center">
                           Read More
                           <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                         </Link>

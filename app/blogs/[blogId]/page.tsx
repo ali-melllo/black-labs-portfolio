@@ -96,10 +96,10 @@ export default function BlogDetailPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="max-w-4xl mx-auto"
+            className="max-w-5xl mx-auto"
           >
             <div className="mb-8">
-              <Link href="/blogs" className=" bg-foreground text-background px-4 py-1 rounded-4xl text-sm">
+              <Link href="/blogs" className="bg-foreground text-background px-4 py-2 font-semibold rounded-4xl text-xs">
                 ← Back to Blog
               </Link>
             </div>
@@ -143,13 +143,13 @@ export default function BlogDetailPage() {
               {blog.aiGenerated && blog.aiSummary && (
                 <Card className="mb-6 bg-background rounded-4xl [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] shadow-2xl">
                   <CardHeader>
-                    <CardTitle className="flex items-center gap-2 text-purple-900 dark:text-purple-100">
+                    <CardTitle className="flex items-center gap-2 text-foreground font-semibold">
                       <Sparkles className="h-5 w-5" />
                       AI-Generated Summary
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-purple-800 dark:text-purple-200">{blog.aiSummary}</p>
+                    <p className="text-muted-foreground">{blog.aiSummary}</p>
                   </CardContent>
                 </Card>
               )}
@@ -181,7 +181,7 @@ export default function BlogDetailPage() {
               dangerouslySetInnerHTML={{ __html: blog.content }}
             />
 
-            <Separator className="my-12" />
+            <Separator className="mt-12" />
 
             
           </motion.div>
