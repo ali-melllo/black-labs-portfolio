@@ -9,102 +9,14 @@ import { Badge } from "@/components/ui/badge"
 import { motion } from "framer-motion"
 import { Calendar, User, ArrowRight, Sparkles } from "lucide-react"
 import FooterPreview from "@/components/ui/footer"
+import { articles } from "@/lib/utils"
 
-const blogPosts = [
-  {
-    id: "getting-started-with-nfts",
-    title: "Getting Started with NFTs in Gaming",
-    excerpt: "Learn how NFTs are revolutionizing the gaming industry and how you can start collecting game assets.",
-    author: "Sarah Chen",
-    date: "2024-01-20",
-    readTime: "5 min",
-    image: "/assets/images/morty.webp",
-    tags: ["NFT", "Gaming", "Blockchain"],
-    aiGenerated: true,
-  },
-  {
-    id: "solana-vs-ethereum",
-    title: "Solana vs Ethereum: Which is Better for NFTs?",
-    excerpt: "A comprehensive comparison of Solana and Ethereum for NFT transactions and why we chose Solana.",
-    author: "Mike Johnson",
-    date: "2024-01-18",
-    readTime: "8 min",
-    image: "/assets/images/morty.webp",
-    tags: ["Solana", "Ethereum", "Comparison"],
-    aiGenerated: false,
-  },
-  {
-    id: "creating-game-assets",
-    title: "How to Create High-Quality Game Assets",
-    excerpt: "Tips and techniques for creating professional game assets that sell on marketplaces.",
-    author: "Alex Rivera",
-    date: "2024-01-15",
-    readTime: "10 min",
-    image: "/assets/images/morty.webp",
-    tags: ["Tutorial", "Design", "Game Dev"],
-    aiGenerated: false,
-  },
-  {
-    id: "marketplace-trends-2024",
-    title: "2024 Game Asset Marketplace Trends",
-    excerpt: "AI-generated summary of the latest trends in digital asset marketplaces and what to expect in 2024.",
-    author: "Black Labs Team",
-    date: "2024-01-10",
-    readTime: "6 min",
-    image: "/assets/images/morty.webp",
-    tags: ["Trends", "Market Analysis", "AI"],
-    aiGenerated: true,
-  },
-  {
-    id: "marketplace-trends-2023",
-    title: "2024 Game Asset Marketplace Trends",
-    excerpt: "AI-generated summary of the latest trends in digital asset marketplaces and what to expect in 2024.",
-    author: "Black Labs Team",
-    date: "2024-01-10",
-    readTime: "6 min",
-    image: "/assets/images/morty.webp",
-    tags: ["Trends", "Market Analysis", "AI"],
-    aiGenerated: true,
-  },
-  {
-    id: "marketplace-trends-2022",
-    title: "2024 Game Asset Marketplace Trends",
-    excerpt: "AI-generated summary of the latest trends in digital asset marketplaces and what to expect in 2024.",
-    author: "Black Labs Team",
-    date: "2024-01-10",
-    readTime: "6 min",
-    image: "/assets/images/morty.webp",
-    tags: ["Trends", "Market Analysis", "AI"],
-    aiGenerated: true,
-  },
-  {
-    id: "marketplace-trends-2025",
-    title: "2024 Game Asset Marketplace Trends",
-    excerpt: "AI-generated summary of the latest trends in digital asset marketplaces and what to expect in 2024.",
-    author: "Black Labs Team",
-    date: "2024-01-10",
-    readTime: "6 min",
-    image: "/assets/images/morty.webp",
-    tags: ["Trends", "Market Analysis", "AI"],
-    aiGenerated: true,
-  },
-  {
-    id: "marketplace-trends-2026",
-    title: "2024 Game Asset Marketplace Trends",
-    excerpt: "AI-generated summary of the latest trends in digital asset marketplaces and what to expect in 2024.",
-    author: "Black Labs Team",
-    date: "2024-01-10",
-    readTime: "6 min",
-    image: "/assets/images/morty.webp",
-    tags: ["Trends", "Market Analysis", "AI"],
-    aiGenerated: true,
-  },
-]
+
 
 export default function BlogsPage() {
   const [searchQuery, setSearchQuery] = useState("")
 
-  const filteredPosts = blogPosts.filter(
+  const filteredPosts = articles.filter(
     (post) =>
       post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||

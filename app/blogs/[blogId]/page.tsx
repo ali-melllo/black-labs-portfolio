@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client"
 
-import { useState } from "react"
 import { useParams } from "next/navigation"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -10,75 +9,18 @@ import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Separator } from "@/components/ui/separator"
 import { motion } from "framer-motion"
-import { Calendar, Clock, Share2, Sparkles, ThumbsUp, MessageCircle } from "lucide-react"
+import { Calendar, Clock, Share2, Sparkles, ThumbsUp } from "lucide-react"
 import FooterPreview from "@/components/ui/footer"
 import { toast } from "@/components/ui/toast"
+import { articles } from "@/lib/utils"
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const blogDetails: Record<string, any> = {
-  "getting-started-with-nfts": {
-    id: "getting-started-with-nfts",
-    title: "Getting Started with NFTs in Gaming",
-    content: `
-      <h2>Introduction to NFTs in Gaming</h2>
-      <p>Non-fungible tokens (NFTs) have revolutionized the gaming industry by introducing true ownership of in-game assets. Unlike traditional game items that are controlled by game developers, NFTs give players actual ownership that can be transferred, sold, or traded freely.</p>
-      
-      <h3>What Makes NFTs Special?</h3>
-      <p>NFTs are unique digital assets stored on a blockchain. Each NFT has a distinct identifier that makes it different from any other token. This uniqueness is what gives NFTs their value and makes them perfect for representing rare or exclusive game items.</p>
-      
-      <h3>Getting Started</h3>
-      <p>To start collecting NFT game assets, you'll need:</p>
-      <ul>
-        <li>A cryptocurrency wallet (like Phantom for Solana)</li>
-        <li>Some cryptocurrency to make purchases</li>
-        <li>An account on an NFT marketplace (like Black Labs!)</li>
-      </ul>
-      
-      <h3>Benefits of NFT Game Assets</h3>
-      <p>Owning NFT game assets provides several advantages:</p>
-      <ul>
-        <li><strong>True Ownership:</strong> You own the asset, not just a license to use it</li>
-        <li><strong>Transferability:</strong> Sell or trade your assets anytime</li>
-        <li><strong>Interoperability:</strong> Some assets can be used across multiple games</li>
-        <li><strong>Scarcity:</strong> Limited edition items maintain their value</li>
-      </ul>
-      
-      <h3>Conclusion</h3>
-      <p>The future of gaming is being shaped by NFT technology. As more games adopt blockchain technology, the value and utility of NFT game assets will continue to grow.</p>
-    `,
-    author: "Sarah Chen",
-    authorBio: "Blockchain gaming enthusiast and NFT collector",
-    date: "2024-01-20",
-    readTime: "5 min",
-    image: "/assets/images/morty.webp",
-    tags: ["NFT", "Gaming", "Blockchain"],
-    aiGenerated: true,
-    aiSummary:
-      "This article introduces NFTs in gaming, explaining their unique properties, how to get started with collecting them, and the benefits they provide including true ownership, transferability, and scarcity.",
-  },
-}
 
 export default function BlogDetailPage() {
   const params = useParams()
   const blogId = params.blogId as string
-  const blog = blogDetails[blogId] || blogDetails["getting-started-with-nfts"]
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const blog : any = articles.find((x) => x.id === blogId) 
 
-  const [comments] = useState([
-    {
-      id: 1,
-      author: "John Doe",
-      content: "Great article! Very informative.",
-      date: "2024-01-21",
-      likes: 5,
-    },
-    {
-      id: 2,
-      author: "Jane Smith",
-      content: "Thanks for explaining this so clearly. I learned a lot!",
-      date: "2024-01-22",
-      likes: 3,
-    },
-  ])
 
   const handleShare = () => {
       toast.add({
@@ -169,10 +111,6 @@ export default function BlogDetailPage() {
                   <Share2 className="h-4 w-4 mr-2" />
                   Share
                 </Button>
-              </div>
-              <div className="text-sm text-muted-foreground">
-                <MessageCircle className="inline h-4 w-4 mr-1" />
-                {comments.length} comments
               </div>
             </div>
 
