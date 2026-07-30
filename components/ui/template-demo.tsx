@@ -22,6 +22,8 @@ import AnalyticsCard from "./analytics-demo";
 import Reviews from "./reviews";
 import EffortlessScheduling from "./schedule";
 import FeaturesGrid from "./features-grid";
+import { Marquee } from "./marquee";
+import Image from "next/image";
 
 type Items = {
     srcDesktop: string;
@@ -33,6 +35,53 @@ type Items = {
 }[]
 
 const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
+const LOGOS = [
+    {
+        alt: "Jack",
+        img: "/assets/images/logos/shahedan-logo.png",
+    },
+    {
+        alt: "atrafe man",
+        img: "/assets/images/logos/atrafe-man.png",
+    },
+    {
+        alt: "kloud",
+        img: "/assets/images/logos/logo.png",
+    },
+    {
+        alt: "meow shop",
+        img: "/assets/images/logos/meowshop-logo.jpg",
+    },
+    {
+        alt: "kloud new",
+        img: "/assets/images/logos/logo-symbol.svg",
+    },
+    {
+        alt: "Jack",
+        img: "/assets/images/logos/sarafiroyal-logo.png",
+    },
+    {
+        alt: "Jack",
+        img: "/assets/images/logos/ugym-logo.jpg",
+    },
+    {
+        alt: "takhte",
+        img: "/assets/images/logos/takhte-logo.png",
+    },
+    {
+        alt: "PlayCo",
+        img: "/assets/images/logos/playco-logo.png",
+    },
+    {
+        alt: "Navoshgaran",
+        img: "/assets/images/logos/navoshgaran-logo.png",
+    },
+    {
+        alt: "90 roz",
+        img: "/assets/images/logos/90-roz.webp",
+    },
+
+]
 
 export default function TemplateDemo({ templates }: { templates: Items }) {
 
@@ -119,13 +168,34 @@ export default function TemplateDemo({ templates }: { templates: Items }) {
 
 
             <div className="w-full relative flex justify-center items-center md:mt-40">
-                <button
-
+                <Link
+                    href={"/projects"}
                     className={`text-sm md:text-base w-full mx-10 md:w-80 font-bold text-background rounded-xl flex gap-2 hover:scale-105 transition-all duration-300 justify-center items-center h-12  bg-foreground  shadow-xl`}>
                     <Search size={15} />
                     Browse All Projects
-                </button>
+                </Link>
             </div>
+
+
+          
+                    <div className="relative w-8/12! mx-auto mt-50 flex flex-col items-center justify-center overflow-hidden bg-background">
+                        <h1 className="text-3xl font-extrabold text-muted-foreground">See Which Companies Trusted US</h1>
+                        <Marquee reverse className="[--duration:20s] mt-20">
+                            {LOGOS.map((review) => (
+                                <Image
+                                    alt={review.alt}
+                                    className="w-20 h-20 rounded-xl mx-5 grayscale-100 opacity-50"
+                                    src={review.img}
+                                    key={review.img}
+                                    width={100}
+                                    height={100}
+                                />
+                            ))}
+                        </Marquee>
+                        <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-linear-to-r from-white dark:from-background"></div>
+                        <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-linear-to-l from-white dark:from-background"></div>
+                    </div>
+              
 
 
             <div className="mt-40">

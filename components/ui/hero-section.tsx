@@ -22,6 +22,7 @@ import { Keyboard } from "./keyboard";
 import { FlickeringGrid } from "./flickering-grid";
 import ImageAnimate from "./image-animate";
 import { FeaturesIphone } from "./features-iphone";
+import Link from "next/link";
 
 const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
 
@@ -89,10 +90,10 @@ export const HeroSection = () => {
                     </p>
 
                     <div className="flex flex-col md:flex-row justify-between items-center gap-5 md:gap-10">
-                        <button className={"bg-background w-56 md:w-64 rounded-2xl hover:scale-105 transition-all duration-300 text-foreground h-12 flex justify-center items-center gap-2 text-base p-3 z-30 font-bold [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] shadow-xl"}>
+                        <Link href={"/projects"} className={"bg-background w-56 md:w-64 rounded-2xl hover:scale-105 transition-all duration-300 text-foreground h-12 flex justify-center items-center gap-2 text-base p-3 z-30 font-bold [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] shadow-xl"}>
                             <Computer size={22} />
                             Browse Templates
-                        </button>
+                        </Link>
                         <button className={"bg-primary w-56 md:w-64 rounded-2xl hover:scale-105 transition-all duration-300 text-background h-12 flex justify-center items-center gap-2 text-base p-3 z-30 font-bold [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] shadow-xl"}>
                             <Code size={22} />
                             Order A Project

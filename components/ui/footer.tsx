@@ -10,7 +10,8 @@ const FooterPreview = () => {
             <div className="relative w-full overflow-hidden  border-neutral-100 bg-white  py-10 dark:border-white/10 dark:bg-neutral-950">
               <div className="mx-auto flex max-w- flex-col items-start justify-between text-sm text-neutral-500 sm:flex-row md:px-8">
                 <div>
-                  <div className="mr-0 mb-4 md:mr-4 md:flex">
+                  <div className="mr-0 mb-4 md:mr-4 md:flex-col">
+
                     <div className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black">
                       <div className="size-8 min-w-8 md:size-10 rounded-full">
                         <Image
@@ -21,27 +22,32 @@ const FooterPreview = () => {
                           className=" w-full h-full rounded-full"
                         />
                       </div>
-                      <span className="font-medium text-black dark:text-white">Black Labs</span>
+                      <span className="font-extrabold text-black dark:text-white">Black Labs</span>
                     </div>
+                    <p className='max-w-7/12 p-2'>
+                      We design and develop premium websites, web applications, and digital experiences that help businesses stand out and grow.
+                    </p>
+                    <p className='max-w-7/12 p-2 '>
+                      A Product By <span className='font-extrabold text-foreground'>Black Labs </span>Team
+                    </p>
                   </div>
                 </div>
-                <div className="mt-10 grid grid-cols-2 items-start gap-10 sm:mt-0 md:mt-0 lg:grid-cols-4">
+                <div className="mt-10 grid grid-cols-2 items-start gap-10 sm:mt-0 md:mt-0 lg:grid-cols-3">
                   <div className="flex w-full flex-col justify-center space-y-4">
                     <p className="hover:text-text-neutral-800 font-bold text-neutral-600 transition-colors dark:text-neutral-300">Pages</p>
                     <ul className="hover:text-text-neutral-800 list-none space-y-4 text-neutral-600 transition-colors dark:text-neutral-300">
-                      <li className="list-none"><a className="hover:text-text-neutral-800 transition-colors" href="#">All Products</a></li>
-                      <li className="list-none"><a className="hover:text-text-neutral-800 transition-colors" href="#">Studio</a></li>
-                      <li className="list-none"><a className="hover:text-text-neutral-800 transition-colors" href="#">Clients</a></li>
-                      <li className="list-none"><a className="hover:text-text-neutral-800 transition-colors" href="#">Pricing</a></li>
-                      <li className="list-none"><a className="hover:text-text-neutral-800 transition-colors" href="#">Blog</a></li>
+                      <li className="list-none"><a className="hover:text-text-neutral-800 transition-colors" href="/projects">All Products</a></li>
+                      <li className="list-none"><a className="hover:text-text-neutral-800 transition-colors" href="/blogs">Blogs</a></li>
+                      <li className="list-none"><a className="hover:text-text-neutral-800 transition-colors" href="/contactUs">Contact Us</a></li>
+                      <li className="list-none"><a className="hover:text-text-neutral-800 transition-colors" href="/about">About</a></li>
                     </ul>
                   </div>
                   <div className="flex flex-col justify-center space-y-4">
                     <p className="hover:text-text-neutral-800 font-bold text-neutral-600 transition-colors dark:text-neutral-300">Socials</p>
                     <ul className="hover:text-text-neutral-800 list-none space-y-4 text-neutral-600 transition-colors dark:text-neutral-300">
-                      <li className="list-none"><a className="hover:text-text-neutral-800 transition-colors" href="#">Facebook</a></li>
+                      <li className="list-none"><a className="hover:text-text-neutral-800 transition-colors" href="#">Telegram</a></li>
                       <li className="list-none"><a className="hover:text-text-neutral-800 transition-colors" href="#">Instagram</a></li>
-                      <li className="list-none"><a className="hover:text-text-neutral-800 transition-colors" href="#">Twitter</a></li>
+                      <li className="list-none"><a className="hover:text-text-neutral-800 transition-colors" href="#">X Account</a></li>
                       <li className="list-none"><a className="hover:text-text-neutral-800 transition-colors" href="#">LinkedIn</a></li>
                     </ul>
                   </div>
@@ -50,15 +56,6 @@ const FooterPreview = () => {
                     <ul className="hover:text-text-neutral-800 list-none space-y-4 text-neutral-600 transition-colors dark:text-neutral-300">
                       <li className="list-none"><a className="hover:text-text-neutral-800 transition-colors" href="#">Privacy Policy</a></li>
                       <li className="list-none"><a className="hover:text-text-neutral-800 transition-colors" href="#">Terms of Service</a></li>
-                      <li className="list-none"><a className="hover:text-text-neutral-800 transition-colors" href="#">Cookie Policy</a></li>
-                    </ul>
-                  </div>
-                  <div className="flex flex-col justify-center space-y-4">
-                    <p className="hover:text-text-neutral-800 font-bold text-neutral-600 transition-colors dark:text-neutral-300">Register</p>
-                    <ul className="hover:text-text-neutral-800 list-none space-y-4 text-neutral-600 transition-colors dark:text-neutral-300">
-                      <li className="list-none"><a className="hover:text-text-neutral-800 transition-colors" href="#">Sign Up</a></li>
-                      <li className="list-none"><a className="hover:text-text-neutral-800 transition-colors" href="#">Login</a></li>
-                      <li className="list-none"><a className="hover:text-text-neutral-800 transition-colors" href="#">Forgot Password</a></li>
                     </ul>
                   </div>
                 </div>

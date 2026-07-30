@@ -137,7 +137,7 @@ export default function Reviews() {
               <div className="translate-x-8 -translate-y-7">
                 <Image
                   loading="lazy"
-                  className="size-90 rounded-4xl"
+                  className="size-80 grayscale opacity-50 rounded-4xl"
                   src="/assets/images/reviews.webp"
                   alt="Planingo"
                   width={300}

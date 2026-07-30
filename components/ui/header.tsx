@@ -72,7 +72,7 @@ export function Header() {
 
             <Link
               className="px-2 py-1 text-gray-900 dark:text-gray-50"
-              href={"#"}
+              href={"/projects"}
             >
               Projects
             </Link>
