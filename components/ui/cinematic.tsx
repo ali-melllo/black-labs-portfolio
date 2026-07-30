@@ -5,6 +5,7 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { cn } from "@/lib/utils";
+import { ArrowBigDown } from "lucide-react";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -325,6 +326,8 @@ export function CinematicHero({
         <h1 className="text-days gsap-reveal text-silver-matte text-5xl pb-3 md:text-7xl lg:text-[6rem] font-extrabold tracking-tighter">
           {tagline2}
         </h1>
+
+        <p className="mt-20 text-muted-foreground font-semibold flex justify-center items-center gap-1 ">Scroll Down <ArrowBigDown/></p>
       </div>
 
       {/* BACKGROUND LAYER 2: Tactile CTA Buttons */}
