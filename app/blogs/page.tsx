@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client"
 
-import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
@@ -14,15 +13,8 @@ import { articles } from "@/lib/utils"
 
 
 export default function BlogsPage() {
-  const [searchQuery, setSearchQuery] = useState("")
 
-  const filteredPosts = articles.filter(
-    (post) =>
-      post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      post.tags.some((tag) => tag.toLowerCase().includes(searchQuery.toLowerCase())),
-  )
-
+  
   return (
     <div className="flex flex-col z-20 pt-20 min-h-svh md:max-w-7xl 2xl:max-w-[90em] mx-auto relative">
       <main className="flex-1">
@@ -40,7 +32,7 @@ export default function BlogsPage() {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-4 2xl:grid-cols-5 gap-6 gap-y-8 px-5">
-              {filteredPosts.map((post, index) => (
+              {articles.map((post, index) => (
                 <motion.div
                   key={post.id}
                   initial={{ opacity: 0, y: 20 }}
@@ -97,14 +89,7 @@ export default function BlogsPage() {
               ))}
             </div>
 
-            {filteredPosts.length === 0 && (
-              <div className="text-center py-12">
-                <p className="text-muted-foreground text-lg">No articles found matching your search</p>
-                <Button className="mt-4" onClick={() => setSearchQuery("")}>
-                  Clear Search
-                </Button>
-              </div>
-            )}
+            
           </motion.div>
         </div>
       </main>
