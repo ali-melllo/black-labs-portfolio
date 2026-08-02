@@ -35,8 +35,9 @@ export function Header() {
     }
   }, [])
 
-  if (!mounted) return <div className="w-full h-screen bg-transparent"></div>;
+  if (!mounted) return null;
 
+  
   return <header
     className={cn(
       "fixed inset-x-0 z-50 mx-auto flex max-w-full transform-gpu animate-slide-down-fade justify-center items-center overflow-hidden  border border-transparent  p-3 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1.03)] will-change-transform",
