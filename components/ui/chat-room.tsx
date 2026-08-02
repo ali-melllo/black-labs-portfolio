@@ -1,7 +1,6 @@
 import {
     Avatar,
     AvatarFallback,
-    AvatarImage,
 } from "@/components/ui/avatar"
 import {
     Bubble,
@@ -13,7 +12,6 @@ import {
     Message,
     MessageAvatar,
     MessageContent,
-    MessageFooter,
 } from "@/components/ui/message"
 import { AiCardDemo } from "./ai-features-card"
 
@@ -23,7 +21,6 @@ export function MessageDemo() {
             <Message align="end">
                 <MessageAvatar>
                     <Avatar>
-                        <AvatarImage src="/avatars/10.png" alt="@me" />
                         <AvatarFallback>ME</AvatarFallback>
                     </Avatar>
                 </MessageAvatar>

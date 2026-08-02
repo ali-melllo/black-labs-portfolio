@@ -51,7 +51,8 @@ export function Header() {
         <Link
           href={"/"}
           className="flex items-center gap-x-2 "
-          aria-label="Home">
+          aria-label="Home"
+        >
           <span className="sr-only">Company logo</span>
 
           <div className="size-8 min-w-8 md:size-12 rounded-full">

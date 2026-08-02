@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import {
 	Empty,
 	EmptyContent,
@@ -17,14 +16,14 @@ export default function NotFound() {
 					<EmptyTitle className="mask-b-from-20% mask-b-to-80% font-extrabold text-9xl">
 						404
 					</EmptyTitle>
-					<EmptyDescription className="text-nowrap text-xl text-foreground/80">
+					<EmptyDescription className="md:text-nowrap text-sm md:text-xl text-foreground/80">
 						The page you&apos;re looking for might have been <br />
 						moved or doesn&apos;t exist.
 					</EmptyDescription>
 				</EmptyHeader>
 				<EmptyContent>
 					<div className="flex gap-2">
-						<Link href={"/"} className="flex justify-center items-center bg-foreground text-background rounded-xl p-2 font-bold">
+						<Link href={"/"} className="flex justify-center items-center bg-foreground text-background rounded-xl p-2 px-4 font-bold">
 							
 								<HomeIcon
 								className="size-4 mr-2" data-icon="inline-start" />
@@ -32,7 +31,7 @@ export default function NotFound() {
 							
 						</Link>
 
-						<Link className="flex justify-center items-center bg-transparent border rounded-xl p-2 font-bold" href={"/projects"}>
+						<Link className="flex justify-center items-center bg-transparent border rounded-xl p-2 px-4 font-bold" href={"/projects"}>
 							
 								<CompassIcon 
 								className="size-4 mr-2" 

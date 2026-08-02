@@ -1,7 +1,6 @@
 "use client"
 
 import * as React from "react"
-import { motion } from "motion/react"
 
 // ---------------------------------------------------------------------------
 // Shared tile wrapper for every logo
@@ -28,7 +27,6 @@ function ConnectorBeam({
   width,
   height,
   className,
-  delay = 0,
 }: {
   d: string
   width: number
@@ -49,33 +47,7 @@ function ConnectorBeam({
     >
       <path d={d} stroke="currentColor" strokeWidth="1.5" />
       <path d={d} stroke={`url(#${gradientId})`} strokeWidth="1.5" />
-      <defs>
-        <motion.linearGradient
-          id={gradientId}
-          gradientUnits="userSpaceOnUse"
-          x1="0"
-          y1="0"
-          x2={width * 0.1}
-          y2={height * 0.1}
-          animate={{
-            x1: [0, width, width * 1.2],
-            x2: [0, width, width * 1.5],
-            y1: [0, height, height * 0.5],
-            y2: [0, height, height],
-          }}
-          transition={{
-            duration: 0.1,
-            repeat: Infinity,
-            repeatType: "reverse",
-            ease: "easeInOut",
-            delay,
-          }}
-        >
-          <stop stopColor="#001AFF" stopOpacity="0" />
-          <stop offset="1" stopColor="#6DD4F5" />
-          <stop offset="1" stopColor="#6DD4F5" stopOpacity="0" />
-        </motion.linearGradient>
-      </defs>
+      
     </svg>
   )
 }

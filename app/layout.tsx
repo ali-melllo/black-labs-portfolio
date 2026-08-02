@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils";
 import { Header } from "@/components/ui/header";
 import { Toaster } from "@/components/ui/toast";
+import PageLoadingIndicator from "@/components/ui/PageLoadingIndicator";
 
 const oxaniumHeading = Oxanium({ subsets: ['latin'], variable: '--font-heading' });
 
@@ -28,6 +29,7 @@ export default function RootLayout({
     >
       <body className="overflow-x-hidden flex relative">
         <ThemeProvider>
+          <PageLoadingIndicator />
           <Header />
           {children}
           <Toaster />
