@@ -6,24 +6,6 @@ import { MacbookPro } from "@/components/ui/macbook-demo";
 import { DollarSignIcon, Eye, Search } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import {
-    animate,
-    motion,
-    useMotionTemplate,
-    useMotionValue,
-} from "framer-motion";
-import { useEffect } from "react";
-
-import IntegrationDemo from "./integration-demo";
-import EverythingElseCard from "./everything-else";
-import AiIntegration from "./ai-integration";
-import { DottedMap } from "./dotted-map";
-import AnalyticsCard from "./analytics-demo";
-import Reviews from "./reviews";
-import EffortlessScheduling from "./schedule";
-import FeaturesGrid from "./features-grid";
-import { Marquee } from "./marquee";
-import Image from "next/image";
 
 type Items = {
     srcDesktop: string;
@@ -34,79 +16,8 @@ type Items = {
     tags: string[]
 }[]
 
-const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
-const LOGOS = [
-    {
-        alt: "Jack",
-        img: "/assets/images/logos/shahedan-logo.png",
-    },
-    {
-        alt: "atrafe man",
-        img: "/assets/images/logos/atrafe-man.png",
-    },
-    {
-        alt: "kloud",
-        img: "/assets/images/logos/logo.png",
-    },
-    {
-        alt: "meow shop",
-        img: "/assets/images/logos/meowshop-logo.jpg",
-    },
-    {
-        alt: "kloud new",
-        img: "/assets/images/logos/logo-symbol.svg",
-    },
-    {
-        alt: "Jack",
-        img: "/assets/images/logos/sarafiroyal-logo.png",
-    },
-    {
-        alt: "Jack",
-        img: "/assets/images/logos/ugym-logo.jpg",
-    },
-    {
-        alt: "takhte",
-        img: "/assets/images/logos/takhte-logo.png",
-    },
-    {
-        alt: "PlayCo",
-        img: "/assets/images/logos/playco-logo.png",
-    },
-    {
-        alt: "Navoshgaran",
-        img: "/assets/images/logos/navoshgaran-logo.png",
-    },
-    {
-        alt: "90 roz",
-        img: "/assets/images/logos/90-roz.webp",
-    },
-
-]
 
 export default function TemplateDemo({ templates }: { templates: Items }) {
-
-
-    const color = useMotionValue(COLORS_TOP[0]);
-
-    useEffect(() => {
-        const controls = animate(color, COLORS_TOP, {
-            ease: "easeInOut",
-            duration: 10,
-            repeat: Infinity,
-            repeatType: "mirror",
-        });
-
-        return () => controls.stop();
-    }, [color]);
-
-    const aurora = useMotionTemplate`
-    radial-gradient(
-      160% 160% at 50% 0%,
-      transparent 35%,
-      ${color}
-    )
-  `;
-
 
     return (
         <div className="flex flex-col items-center mt-48 w-full overflow-hidden">
@@ -176,98 +87,6 @@ export default function TemplateDemo({ templates }: { templates: Items }) {
                 </Link>
             </div>
 
-
-          
-                    <div className="relative w-8/12! mx-auto mt-50 flex flex-col items-center justify-center overflow-hidden bg-background">
-                        <h1 className="text-3xl font-extrabold text-muted-foreground">See Which Companies Trusted US</h1>
-                        <Marquee reverse className="[--duration:20s] mt-20">
-                            {LOGOS.map((review) => (
-                                <Image
-                                    alt={review.alt}
-                                    className="w-20 h-20 rounded-xl mx-5 grayscale-100 opacity-50"
-                                    src={review.img}
-                                    key={review.img}
-                                    width={100}
-                                    height={100}
-                                />
-                            ))}
-                        </Marquee>
-                        <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-linear-to-r from-white dark:from-background"></div>
-                        <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-linear-to-l from-white dark:from-background"></div>
-                    </div>
-              
-
-
-            <div className="mt-40">
-                <FeaturesGrid />
-            </div>
-
-            <motion.section className="relative min-h-[50vh] mt-30 w-full z-20 overflow-hidden bg-background">
-                <motion.div
-                    aria-hidden
-                    style={{
-                        backgroundImage: aurora,
-                    }}
-                    className="absolute inset-0"
-                />
-            </motion.section>
-
-            <motion.section className="relative min-h-[50vh] rotate-180 w-full z-30 overflow- bg-background">
-                <motion.div
-                    aria-hidden
-                    style={{
-                        backgroundImage: aurora,
-                    }}
-                    className="absolute inset-0"
-                />
-
-                <div className="rotate-180 w-full px-10 -bottom-100 gap-5 absolute z-40 flex flex-col">
-                    <div className="flex items-center gap-5 justify-center w-full">
-
-                        <div className="w-8/12 flex p-6 justify-center items-center overflow-hidden h-96 rounded-3xl bg-background [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] shadow-2xl">
-                            <IntegrationDemo />
-                        </div>
-
-                        <div className="w-4/12 h-96 flex flex-col overflow-hidden relative justify-center items-center rounded-3xl bg-background [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] shadow-2xl">
-                            <EverythingElseCard />
-                        </div>
-
-                    </div>
-                    <div className="flex flex-row-reverse items-center gap-5 justify-center w-full">
-
-                        <div className="w-8/12 overflow-hidden h-96 flex flex-col relative rounded-3xl bg-background [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] shadow-2xl">
-                            <h3 className="text-lg z-30 px-5 pt-5 font-semibold text-foreground ">No Matter Where You Are</h3>
-                            <p className="text-xs z-30 p-5 pt-2 font-normal text-neutral-400 max-w-sm">
-                                With our WorldWide developer team you can access to our services and support from anywhere in the world.
-                            </p>
-                            <DottedMap className="z-10 mask-[radial-gradient(50%_60%_at_50%_50%,white_0%,transparent_100%)]" />
-                            {/* <div className="absolute z-20 rounded-r-2xl h-full right-0 inset-y-0 w-90 bg-linear-to-l from-background to-transparent" />
-                            <div className="absolute z-20 rounded-l-2xl h-full left-0  inset-y-0 w-90 bg-linear-to-r from-background to-transparent" />
-                            <div className="absolute z-20 rounded-b-3xl h-30 bottom-0 w-full bg-linear-to-t from-background to-transparent" />
-                            <div className="absolute z-20 rounded-t-2xl h-100 top-0 w-full bg-linear-to-b from-background to-transparent" /> */}
-
-                        </div>
-
-                        <div className="w-4/12 h-96 rounded-3xl bg-background [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] shadow-2xl">
-                            <AnalyticsCard />
-                        </div>
-
-                    </div>
-                </div>
-
-            </motion.section>
-
-
-            <div className="mt-20 ">
-                <AiIntegration />
-            </div>
-
-            <div className="mt-40 mb-60 ">
-                <Reviews />
-            </div>
-
-
-            <EffortlessScheduling />
 
         </div>
     )

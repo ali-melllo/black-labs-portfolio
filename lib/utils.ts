@@ -1052,3 +1052,52 @@ export const articles = [
       "Improve your search rankings with proven technical SEO practices."
   }
 ];
+
+
+export const LOGOS = [
+  {
+      alt: "Jack",
+      img: "/assets/images/logos/shahedan-logo.png",
+  },
+  {
+      alt: "atrafe man",
+      img: "/assets/images/logos/atrafe-man.png",
+  },
+  {
+      alt: "kloud",
+      img: "/assets/images/logos/logo.png",
+  },
+  {
+      alt: "meow shop",
+      img: "/assets/images/logos/meowshop-logo.jpg",
+  },
+  {
+      alt: "kloud new",
+      img: "/assets/images/logos/logo-symbol.svg",
+  },
+  {
+      alt: "Jack",
+      img: "/assets/images/logos/sarafiroyal-logo.png",
+  },
+  {
+      alt: "Jack",
+      img: "/assets/images/logos/ugym-logo.jpg",
+  },
+  {
+      alt: "takhte",
+      img: "/assets/images/logos/takhte-logo.png",
+  },
+  {
+      alt: "PlayCo",
+      img: "/assets/images/logos/playco-logo.png",
+  },
+  {
+      alt: "Navoshgaran",
+      img: "/assets/images/logos/navoshgaran-logo.png",
+  },
+  {
+      alt: "90 roz",
+      img: "/assets/images/logos/90-roz.webp",
+  },
+
+]
