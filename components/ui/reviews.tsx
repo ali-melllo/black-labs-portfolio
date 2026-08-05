@@ -98,14 +98,14 @@ const ReviewCard = ({
 export default function Reviews() {
   return (
     <section className="z-0 ">
-      <div className="my-container mb-10">
+      <div className=" mb-10">
         <div className="flex flex-col items-center justify-center relative">
           {/* Header Section */}
           <h1 className="text-3xl font-bold bg-opacity-50 bg-linear-to-t from-neutral-400 to-neutral-900 dark:from-neutral-50 dark:to-neutral-400 bg-clip-text! text-transparent md:mt-10 tracking-tighter md:text-5xl lg:text-7xl">
             Reviews & Feedbacks About US
           </h1>
 
-          <p className="max-w-11/12 mt-5 text-xs md:text-base md:max-w-8/12 text-muted-foreground font-semibold text-center">
+          <p className="max-w-11/12 mt-5 text-sm md:text-base md:max-w-8/12 text-muted-foreground font-semibold text-center">
             See What People Think about our work and Performance
           </p>
 
@@ -165,38 +165,54 @@ export default function Reviews() {
           </div>
 
           {/* Mobile/Tablet Carousel */}
-          <Carousel opts={{ loop: true }} className="w-full block lg:hidden mt-20" dir="ltr">
-            <CarouselContent>
-              <CarouselItem className="overflow-visible! cursor-pointer md:basis-1/3! lg:basis-1/6!">
-                <ReviewCard reviewKey="marwan" className="overflow-visible! bg-pastel-purple" />
+          <Carousel opts={{ loop: true }} className="w-full max-w-svw bg-background block lg:hidden mt-10 " >
+            <CarouselContent className="py-5 pb-10">
+              <CarouselItem>
+                <ReviewCard
+                  className="bg-background [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] shadow-2xl"
+                  reviewKey="marwan" />
               </CarouselItem>
 
-              <CarouselItem className="cursor-pointer md:basis-1/3! lg:basis-1/6!">
-                <ReviewCard reviewKey="abd" className="bg-pastel-green" />
+              <CarouselItem className="cursor-pointer">
+                <ReviewCard
+                  className="bg-background [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] shadow-2xl"
+                  reviewKey="abd" />
               </CarouselItem>
 
               <CarouselItem>
-                <ReviewCard reviewKey="maymay" />
+                <ReviewCard
+                  className="bg-background [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] shadow-2xl"
+                  reviewKey="maymay" />
               </CarouselItem>
 
               <CarouselItem>
-                <ReviewCard reviewKey="reyhaneh" />
+                <ReviewCard
+                  className="bg-background [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] shadow-2xl"
+                  reviewKey="reyhaneh" />
               </CarouselItem>
 
               <CarouselItem>
-                <ReviewCard reviewKey="chris" />
+                <ReviewCard
+                  className="bg-background [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] shadow-2xl"
+                  reviewKey="chris" />
               </CarouselItem>
 
               <CarouselItem>
-                <ReviewCard reviewKey="brad" />
+                <ReviewCard
+                  className="bg-background [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] shadow-2xl"
+                  reviewKey="brad" />
               </CarouselItem>
 
               <CarouselItem>
-                <ReviewCard reviewKey="mahtab" />
+                <ReviewCard
+                  className="bg-background [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] shadow-2xl"
+                  reviewKey="mahtab" />
               </CarouselItem>
 
               <CarouselItem>
-                <ReviewCard reviewKey="diego" />
+                <ReviewCard
+                  className="bg-background [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] shadow-2xl"
+                  reviewKey="diego" />
               </CarouselItem>
             </CarouselContent>
           </Carousel>

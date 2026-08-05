@@ -26,7 +26,7 @@ const FooterPreview = dynamic(() => import("@/components/ui/footer"));
 export default function Page() {
   return (
 
-    <div className="flex flex-col z-20 justify- min-h-svh md:max-w-7xl 2xl:max-w-[90em] mx-auto relative">
+    <div className="flex flex-col z-20  min-h-svh md:max-w-7xl 2xl:max-w-[90em] mx-auto relative">
       <div className="hidden md:flex h-full w-3 absolute inset-y-0 z-30 -left-3 shadow-2xl border flex-col items-center justify-center overflow-hidden">
         <StripedPattern direction="right" className="fill-muted" />
       </div>
@@ -52,7 +52,7 @@ export default function Page() {
         <IntegrationCards />
       </section>
 
-      <section className="mt-10 px-10">
+      <section className="mt-120 md:mt-10 px-10">
         <FeaturesGrid />
       </section>
 
@@ -60,7 +60,7 @@ export default function Page() {
         <AiIntegration />
       </section>
 
-      <section className="mt-40 mb-60 ">
+      <section className="mt-20 md:mt-40 mb-20 md:mb-60 ">
         <Reviews />
       </section>
 

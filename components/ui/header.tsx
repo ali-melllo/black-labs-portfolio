@@ -6,6 +6,7 @@ import { useEffect, useState } from "react"
 import useScroll from "@/hooks/use-scroll"
 import { ModeToggle } from "./mode-toggle"
 import Image from "next/image"
+import { RequestProjectModal } from "./request-project"
 
 export function Header() {
   const scrolled = useScroll(15);
@@ -37,7 +38,7 @@ export function Header() {
 
   if (!mounted) return null;
 
-  
+
   return <header
     className={cn(
       "fixed inset-x-0 z-50 mx-auto flex max-w-full transform-gpu animate-slide-down-fade justify-center items-center overflow-hidden  border border-transparent  p-3 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1.03)] will-change-transform",
@@ -107,17 +108,20 @@ export function Header() {
 
 
           <ModeToggle />
-          <Link
+          {/* <Link
             className="px-5 py-2 shadow font-bold bg-linear-to-br from-blue-500 to-indigo-500 text-white text-sm rounded-xl"
             href={"#"}
           >
             Request Project
-          </Link>
-
+          </Link> */}
+          <RequestProjectModal />
         </div>
 
-        <div className="flex gap-x-2 md:hidden">
+        <div className="flex gap- md:hidden">
           <ModeToggle />
+
+          <RequestProjectModal />
+
         </div>
       </div>
 

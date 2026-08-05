@@ -2,10 +2,10 @@ import React from 'react'
 
 export default function AiIntegration() {
   return (
-    <section className="py-16 px-4">
+    <section className="py-16 px-8 md:px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12 bg-opacity-50 bg-linear-to-t from-neutral-400 to-neutral-900  dark:from-neutral-50 dark:to-neutral-400 bg-clip-text! text-transparent">
-          <h2 className="text-6xl font-extrabold mb-4">
+          <h2 className="text-4xl md:text-6xl font-extrabold mb-4">
             In built <span className="text-[#FF7757]">AI Integration</span>
           </h2>
           <p className="text-muted-foreground">

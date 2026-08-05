@@ -36,19 +36,19 @@ export default function TemplateDemo({ templates }: { templates: Items }) {
                     <div
                         key={`template-${i}`}
                         className={cn(
-                            "flex flex-col md:flex-row w-full items-center justify-between px-10 gap-y-20 md:mt-40 ",
+                            "flex flex-col md:flex-row w-full min-h-176 md:min-h-auto items-center justify-between px-10 md:gap-y-20 md:mt-40 ",
                             isReversed && " flex-col md:flex-row-reverse"
                         )}
                     >
-                        <div className={`w-full md:w-6/12 relative max-h-80 md:h-full flex items-center`}>
+                        <div className={`w-full md:w-6/12 relative h-full flex items-center`}>
                             <IMac
                                 src={template.srcDesktop}
-                                className={`w-6/12 absolute h-40 md:h-80 scale-120 md:scale-110 z-10 ${isReversed ? "left-2 md:left-22" : "left-2 md:left-7"} bottom-0 md:bottom-1 `} />
+                                className={`w-6/12 absolute h-80 scale-120 md:scale-110 z-10 ${isReversed ? "left-2 md:left-22" : "left-2 md:left-7"} bottom-0 md:bottom-1 `} />
                             <MacbookPro
                                 src={template.srcDesktop}
-                                className={`w-6/12 absolute h-32 md:h-60 z-10  ${isReversed ? "left-38 md:left-72 2xl:left-78" : "left-38 md:left-63"} -bottom-5 md:-bottom-5 `}
+                                className={`w-6/12 absolute h-60 z-10  ${isReversed ? "left-38 md:left-72 2xl:left-78" : "left-38 md:left-63"} -bottom-5 md:-bottom-5 `}
                             />
-                            <div className={`w-20 md:w-36 absolute ${isReversed ? "left-[19em] md:left-[28em] 2xl:left-[33em]" : "left-[19em] md:left-[28em]"} top-10 md:top-0 z-0`}>
+                            <div className={`w-27 md:w-36 absolute ${isReversed ? "left-[19em] md:left-[28em] 2xl:left-[33em]" : "left-[19em] md:left-[28em]"} top-19 md:top-0 z-0`}>
                                 <Iphone src={template.srcMobile} />
                             </div>
                         </div>

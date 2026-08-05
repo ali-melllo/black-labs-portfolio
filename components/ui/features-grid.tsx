@@ -1,7 +1,7 @@
 
 const FeaturesGrid = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 relative z-10 py-10">
+    <div className="grid grid-cols-2 lg:grid-cols-4 relative z-10 py-10 ">
       {/* 1. Built for developers */}
       <div className="flex flex-col lg:border-r py-10 relative group lg:border-l lg:border-b dark:border-neutral-800">
         <div className="opacity-0 group-hover:opacity-100 transition duration-200 group absolute inset-0 h-full w-full bg-linear-to-t from-neutral-100 dark:from-neutral-800 to-transparent pointer-events-none" />

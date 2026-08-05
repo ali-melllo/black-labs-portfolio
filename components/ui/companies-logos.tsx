@@ -5,8 +5,8 @@ import Image from 'next/image'
 export default function CompaniesLogos() {
     return (
 
-        <div className="relative w-8/12! mx-auto mt-50 flex flex-col items-center justify-center overflow-hidden bg-background">
-            <h1 className="text-3xl font-extrabold text-muted-foreground">See Which Companies Trusted US</h1>
+        <div className="relative w-full md:w-8/12! max-w-svw mx-auto mt-50 flex flex-col items-center justify-center overflow-hidden bg-background">
+            <h1 className="md:text-3xl font-extrabold text-muted-foreground">See Which Companies Trusted US</h1>
             <Marquee reverse className="[--duration:20s] mt-20">
                 {LOGOS.map((review) => (
                     <Image

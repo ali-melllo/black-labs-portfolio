@@ -3,12 +3,12 @@ import Image from 'next/image';
 
 const FooterPreview = () => {
   return (
-    <footer className="overflow-hidden mt-60 border-neutral-200 bg-neutral-100 dark:border-neutral-800 dark:bg-neutral-900">
+    <footer className="overflow-hidden mt-30 md:mt-60 border-neutral-200 bg-neutral-100 dark:border-neutral-800 dark:bg-neutral-900">
       <div className="overflow-hidden rounded-lg bg-white shadow-sm dark:bg-neutral-950">
-        <div className="w-full ">
+        <div className="w-full">
           <div className="preview relative flex min-h-87.5 w-full justify-center items-center">
             <div className="relative w-full overflow-hidden  border-neutral-100 bg-white  py-10 dark:border-white/10 dark:bg-neutral-950">
-              <div className="mx-auto flex max-w- flex-col items-start justify-between text-sm text-neutral-500 sm:flex-row md:px-8">
+              <div className="mx-auto flex flex-col items-start justify-between text-sm text-neutral-500 sm:flex-row px-8">
                 <div>
                   <div className="mr-0 mb-4 md:mr-4 md:flex-col">
 
@@ -24,15 +24,15 @@ const FooterPreview = () => {
                       </div>
                       <span className="font-extrabold text-black dark:text-white">Black Labs</span>
                     </div>
-                    <p className='max-w-7/12 p-2'>
+                    <p className='max-w-full md:max-w-7/12 p-2'>
                       We design and develop premium websites, web applications, and digital experiences that help businesses stand out and grow.
                     </p>
-                    <p className='max-w-7/12 p-2 '>
+                    <p className='max-w-full md:max-w-7/12 p-2 '>
                       A Product By <span className='font-extrabold text-foreground'>Black Labs </span>Team
                     </p>
                   </div>
                 </div>
-                <div className="mt-10 grid grid-cols-2 items-start gap-10 sm:mt-0 md:mt-0 lg:grid-cols-3">
+                <div className="mt-10 grid items-start gap-10 sm:mt-0 md:mt-0 px-3 md:px-0 grid-cols-3">
                   <div className="flex w-full flex-col justify-center space-y-4">
                     <p className="hover:text-text-neutral-800 font-bold text-neutral-600 transition-colors dark:text-neutral-300">Pages</p>
                     <ul className="hover:text-text-neutral-800 list-none space-y-4 text-neutral-600 transition-colors dark:text-neutral-300">
