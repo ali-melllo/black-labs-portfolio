@@ -83,24 +83,24 @@ function RequestProjectForm({ onSubmitted }: { onSubmitted: () => void }) {
             <div className="grid gap-4 sm:grid-cols-2">
                 <div className="grid gap-2">
                     <Label htmlFor="name">Full name</Label>
-                    <Input id="name" name="name" placeholder="Jane Doe" required />
+                    <Input className="py-5" id="name" name="name" placeholder="Jane Doe" required />
                 </div>
                 <div className="grid gap-2">
                     <Label htmlFor="email">Email</Label>
-                    <Input id="email" name="email" type="email" placeholder="jane@company.com" required />
+                    <Input className="py-5" id="email" name="email" type="email" placeholder="jane@company.com" required />
                 </div>
             </div>
 
             <div className="grid gap-2">
                 <Label htmlFor="company">Company (optional)</Label>
-                <Input id="company" name="company" placeholder="Acme Inc." />
+                <Input className="py-5" id="company" name="company" placeholder="Acme Inc." />
             </div>
 
             <div className="grid gap-4 sm:grid-cols-2">
                 <div className="grid gap-2">
                     <Label htmlFor="projectType">Project type</Label>
                     <Select name="projectType" required>
-                        <SelectTrigger id="projectType" className="w-full">
+                        <SelectTrigger id="projectType" className="w-full py-5">
                             <SelectValue placeholder="Select a type" />
                         </SelectTrigger>
                         <SelectContent>
@@ -116,7 +116,7 @@ function RequestProjectForm({ onSubmitted }: { onSubmitted: () => void }) {
                 <div className="grid gap-2">
                     <Label htmlFor="budget">Budget</Label>
                     <Select name="budget">
-                        <SelectTrigger id="budget" className="w-full">
+                        <SelectTrigger id="budget" className="w-full py-5">
                             <SelectValue placeholder="Select a range" />
                         </SelectTrigger>
                         <SelectContent>
@@ -131,21 +131,22 @@ function RequestProjectForm({ onSubmitted }: { onSubmitted: () => void }) {
             </div>
 
             <div className="grid gap-2">
-                <Label htmlFor="startDate">Preferred start date</Label>
+                <Label htmlFor="startDate">
+                <CalendarIcon className="size-5" />
+
+                    Preferred start date
+                    </Label>
                 <Popover>
-                    <PopoverTrigger>
-                        <Button
+                    <PopoverTrigger className={"flex items-center justify-center! bg-amber-"}>
+                        <span
                             id="startDate"
-                            type="button"
-                            variant="outline"
                             className={cn(
-                                "w-full justify-start text-left font-normal",
+                                "w-full font-normal border border-dashed border-muted-foreground/50 mt-2 rounded-2xl py-3",
                                 !startDate && "text-muted-foreground",
                             )}
                         >
-                            <CalendarIcon className="mr-2 h-4 w-4" />
                             {startDate ? format(startDate, "PPP") : <span>Pick a date</span>}
-                        </Button>
+                        </span>
                     </PopoverTrigger>
                     <PopoverContent className="w-auto p-0" align="start">
                         <Calendar
@@ -180,7 +181,7 @@ function RequestProjectForm({ onSubmitted }: { onSubmitted: () => void }) {
 // ---------------------------------------------------------------------------
 
 const TRIGGER_CLASSNAME =
-    "px-5 py-2 shadow font-bold bg-linear-to-br from-blue-500 to-indigo-500 text-white text-sm rounded-xl"
+    "px-5 py-2 shadow font-extrabold bg-linear-to-br from-blue-500 to-indigo-500 text-white text-sm rounded-xl"
 
 export function RequestProjectModal() {
     const [open, setOpen] = React.useState(false)
@@ -197,27 +198,25 @@ export function RequestProjectModal() {
                 </span>
             </DrawerTrigger>
 
-            <DrawerContent className="md:rounded-r-none p-5 md:mr-0 font-bold">
+            <DrawerContent className="md:rounded-r-none min-h-dvh! p-5 m-0 bg-background [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] shadow-xl font-bold">
                 <div className="mx-auto w-full">
                     <DrawerHeader className="text-left pl-0 pb-10">
-                        <p className="text-xl">Request a project</p>
+                        <p className="text-xl font-extrabold">Request a project</p>
                         <DrawerDescription>
                             Tell us about what you&apos;re looking to build and we&apos;ll get back to you shortly.
                         </DrawerDescription>
                     </DrawerHeader>
 
-                    <div className="max-h-[60vh] overflow-y-auto sm:max-h-[65vh]">
+                    <div>
                         <RequestProjectForm onSubmitted={handleSubmitted} />
                     </div>
 
-                    <DrawerFooter className="flex-row gap-2 pt-4 sm:flex-row-reverse sm:justify-between">
-                        <Button type="submit" form="request-project-form" className="flex-1 sm:flex-none">
+                    <DrawerFooter className="flex-row gap-2 md:px-0 pt-7 md:pt-4 sm:flex-row-reverse justify-between">
+                        <Button type="submit" form="request-project-form" className="flex-1 py-5 font-bold rounded-xl bg-linear-to-br from-blue-500 to-indigo-500 sm:flex-none">
                             Submit request
                         </Button>
-                        <DrawerClose>
-                            <Button variant="outline" className="flex-1 ">
+                        <DrawerClose className={" min-w-24 rounded-xl border-2"}>
                                 Cancel
-                            </Button>
                         </DrawerClose>
                     </DrawerFooter>
                 </div>
