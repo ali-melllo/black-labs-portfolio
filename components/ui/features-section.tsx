@@ -10,7 +10,7 @@ import { FeaturesIphone } from "./features-iphone";
 
 export default function FeaturesSection() {
   return (
-    <div className="flex flex-col z-30 items-center gap-10 -mt-64 md:-mt-80 px-5 md:px-10">
+    <div className="flex flex-col z-30 items-center gap-10 px-5 md:px-10">
     <h1 className="text-3xl font-bold bg-opacity-50 bg-linear-to-t from-neutral-400 to-neutral-900  dark:from-neutral-50 dark:to-neutral-400 bg-clip-text! text-transparent md:mt-10 tracking-tighter md:text-5xl lg:text-7xl">
         Every Feature Needed
     </h1>

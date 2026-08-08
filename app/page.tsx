@@ -5,7 +5,11 @@ import dynamic from "next/dynamic";
 import { StripedPattern } from "@/components/magicui/striped-pattern";
 import { HeroSection } from "@/components/ui/hero-section";
 import FeaturesSection from "@/components/ui/features-section";
+import ScaleSection from "@/components/ui/scale-section";
+
+
 import { TEMPLATES } from "@/lib/utils";
+
 
 // Below-the-fold sections are code-split via next/dynamic. `ssr` stays on
 // (the default) so the server still renders full HTML for each of these —
@@ -36,17 +40,23 @@ export default function Page() {
 
       <HeroSection />
 
-      <FeaturesSection />
+      <section className="-mt-50 z-40">
+        <CompaniesLogos />
+      </section>
+
+      <section className="mt-40">
+        <ScaleSection />
+      </section>
+
+      <section className="mt-48">
+        <FeaturesSection />
+      </section>
 
       <section className="mt-20">
         <FeaturesCards />
       </section>
 
       <TemplateDemo templates={TEMPLATES} />
-
-      <section>
-        <CompaniesLogos />
-      </section>
 
       <section>
         <IntegrationCards />

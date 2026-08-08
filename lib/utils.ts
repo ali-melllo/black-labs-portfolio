@@ -40,7 +40,7 @@ export const articles = [
     title: "Why Every Modern Business Needs More Than Just a Website",
     excerpt:
       "Discover why modern businesses need high-performance digital experiences instead of outdated brochure websites.",
-      content: `
+    content: `
       <h2>Your Website Is More Than an Online Presence</h2>
     
       <p>
@@ -139,7 +139,7 @@ export const articles = [
     title: "Next.js vs React: Which One Should You Choose?",
     excerpt:
       "Understand the differences between React and Next.js and when each solution makes the most sense.",
-      content: `
+    content: `
       <h2>Understanding React and Next.js</h2>
     
       <p>
@@ -249,7 +249,7 @@ export const articles = [
     title: "Why Website Speed Directly Impacts Revenue",
     excerpt:
       "Every second counts. Learn how website performance influences conversions, SEO, and customer satisfaction.",
-      content: `
+    content: `
       <h2>Website Speed Is More Than a Technical Metric</h2>
     
       <p>
@@ -368,8 +368,8 @@ export const articles = [
       "Helping businesses build lightning-fast digital products.",
     date: "2026-07-24",
     readTime: "7 min",
-    image: "/assets/images/blogs/blog-3.webp", 
-        tags: ["Performance", "SEO", "Optimization"],
+    image: "/assets/images/blogs/blog-3.webp",
+    tags: ["Performance", "SEO", "Optimization"],
     aiGenerated: true,
     aiSummary:
       "Website performance affects user experience, SEO rankings, and business growth."
@@ -380,7 +380,7 @@ export const articles = [
     title: "How Great UI & UX Increase Customer Trust",
     excerpt:
       "Beautiful interfaces aren't enough—great user experiences drive conversions and retention.",
-      content: `
+    content: `
       <h2>Great Design Is About Creating Better Experiences</h2>
     
       <p>
@@ -508,7 +508,7 @@ export const articles = [
     title: "Custom Websites vs Website Builders",
     excerpt:
       "Should you invest in custom development or use platforms like Wix and Squarespace?",
-      content: `
+    content: `
       <h2>Choosing the Right Foundation for Your Digital Presence</h2>
     
       <p>
@@ -648,7 +648,7 @@ export const articles = [
     title: "The Future of Web Development in the AI Era",
     excerpt:
       "AI is changing the way digital products are designed, developed, and maintained.",
-      content: `
+    content: `
       <h2>How Artificial Intelligence Is Changing Web Development</h2>
     
       <p>
@@ -774,7 +774,7 @@ export const articles = [
     title: "Building Scalable Web Applications",
     excerpt:
       "Learn the architecture and technologies behind scalable digital products.",
-      content: `
+    content: `
       <h2>Scalability Begins With the Right Architecture</h2>
     
       <p>
@@ -919,7 +919,7 @@ export const articles = [
     title: "Technical SEO Checklist for Modern Websites",
     excerpt:
       "A practical guide to improving visibility and search rankings with technical SEO.",
-      content: `
+    content: `
       <h2>Technical SEO Is the Foundation of Online Visibility</h2>
     
       <p>
@@ -1056,48 +1056,77 @@ export const articles = [
 
 export const LOGOS = [
   {
-      alt: "Jack",
-      img: "/assets/images/logos/shahedan-logo.png",
+    alt: "Jack",
+    img: "/assets/images/logos/shahedan-logo.png",
   },
   {
-      alt: "atrafe man",
-      img: "/assets/images/logos/atrafe-man.png",
+    alt: "atrafe man",
+    img: "/assets/images/logos/atrafe-man.png",
   },
   {
-      alt: "kloud",
-      img: "/assets/images/logos/logo.png",
+    alt: "kloud",
+    img: "/assets/images/logos/logo.png",
   },
   {
-      alt: "meow shop",
-      img: "/assets/images/logos/meowshop-logo.jpg",
+    alt: "meow shop",
+    img: "/assets/images/logos/meowshop-logo.jpg",
   },
   {
-      alt: "kloud new",
-      img: "/assets/images/logos/logo-symbol.svg",
+    alt: "kloud new",
+    img: "/assets/images/logos/logo-symbol.svg",
   },
   {
-      alt: "Jack",
-      img: "/assets/images/logos/sarafiroyal-logo.png",
+    alt: "Jack",
+    img: "/assets/images/logos/sarafiroyal-logo.png",
   },
   {
-      alt: "Jack",
-      img: "/assets/images/logos/ugym-logo.jpg",
+    alt: "Jack",
+    img: "/assets/images/logos/ugym-logo.jpg",
   },
   {
-      alt: "takhte",
-      img: "/assets/images/logos/takhte-logo.png",
+    alt: "takhte",
+    img: "/assets/images/logos/takhte-logo.png",
   },
   {
-      alt: "PlayCo",
-      img: "/assets/images/logos/playco-logo.png",
+    alt: "PlayCo",
+    img: "/assets/images/logos/playco-logo.png",
   },
   {
-      alt: "Navoshgaran",
-      img: "/assets/images/logos/navoshgaran-logo.png",
+    alt: "Navoshgaran",
+    img: "/assets/images/logos/navoshgaran-logo.png",
   },
   {
-      alt: "90 roz",
-      img: "/assets/images/logos/90-roz.webp",
+    alt: "90 roz",
+    img: "/assets/images/logos/90-roz.webp",
+  },
+  {
+    alt: "Almas",
+    img: "/assets/images/logos/almas.webp",
+  },
+  {
+    alt: "Axi Pro",
+    img: "/assets/images/logos/axipro.webp",
+  },
+  {
+    alt: "Carnik",
+    img: "/assets/images/logos/carnik.webp",
+  },
+  // {
+  //   alt: "Counos",
+  //   img: "/assets/images/logos/counos.webp",
+  // },
+  {
+    alt: "Rad",
+    img: "/assets/images/logos/rad.webp",
+  },
+  {
+    alt: "Taksatsp",
+    img: "/assets/images/logos/taksatsp.webp",
+  },
+
+  {
+    alt: "Tosan Techno",
+    img: "/assets/images/logos/tosantechno.webp",
   },
 
 ]
