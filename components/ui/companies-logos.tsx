@@ -13,7 +13,7 @@ export default function CompaniesLogos() {
                 {LOGOS.map((review) => (
                     <Image
                         alt={review.alt}
-                        className="w-20 h-20 object-cover rounded-xl mx-2 grayscale-100 opacity-30"
+                        className="w-20 h-20 object-cover rounded-xl mx-2 grayscale-100 opacity-40"
                         src={review.img}
                         key={review.img}
                         width={100}
@@ -21,8 +21,6 @@ export default function CompaniesLogos() {
                     />
                 ))}
             </Marquee>
-            <div className="pointer-events-none hidden md:block absolute h-28 bottom-0 left-0 w-1/3 bg-linear-to-r from-white dark:from-background"></div>
-            <div className="pointer-events-none hidden md:block absolute h-28 bottom-0 right-0 w-1/3 bg-linear-to-l from-white dark:from-background"></div>
         </div>
     )
 }

@@ -40,8 +40,10 @@ export default function Page() {
 
       <HeroSection />
 
-      <section className="-mt-50 z-40">
+      <section className="-mt-50 z-40 relative">
         <CompaniesLogos />
+        <div className="pointer-events-none block absolute h-28 bottom-0 left-0 w-6/12 bg-linear-to-r from-white dark:from-background"></div>
+        <div className="pointer-events-none block absolute h-28 bottom-0 right-0 w-6/12 bg-linear-to-l from-white dark:from-background"></div>
       </section>
 
       <section className="mt-40">

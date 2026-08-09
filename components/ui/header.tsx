@@ -59,7 +59,7 @@ export function Header() {
         >
           <span className="sr-only">Company logo</span>
 
-          <div className="size-8 min-w-8 md:size-12 rounded-full">
+          <div className="size-12 rounded-full">
             <Icons.main fill={theme === "dark" ? "#ffffff" : "#000000"} />
           </div>
 
