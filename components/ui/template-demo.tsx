@@ -3,9 +3,10 @@
 import { IMac } from "@/components/ui/imac";
 import { Iphone } from "@/components/ui/iphone";
 import { MacbookPro } from "@/components/ui/macbook-demo";
-import { DollarSignIcon, Eye, Search } from "lucide-react";
+import { Eye, Search } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { OrderProjectModal } from "../order-project-modal";
 
 type Items = {
     srcDesktop: string;
@@ -67,10 +68,9 @@ export default function TemplateDemo({ templates }: { templates: Items }) {
                                     <Eye />
                                     Show Preview
                                 </Link>
-                                <button className=" text-sm md:text-base w-6/12 font-bold text-white rounded-xl flex gap-2 hover:scale-105 transition-all duration-300 justify-center items-center h-10  bg-linear-to-br from-blue-400 to-blue-600  shadow-xl">
-                                    <DollarSignIcon size={15} />
-                                    Order Template
-                                </button>
+
+                                <OrderProjectModal project={template.title}/>
+                                
                             </div>
                         </div>
                     </div>

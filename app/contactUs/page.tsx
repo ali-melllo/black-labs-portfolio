@@ -1,7 +1,71 @@
+"use client"
+
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
+import emailjs from "@emailjs/browser";
+import { toast } from "@/components/ui/toast";
+import { formatDate } from "date-fns";
+import { Loader } from "lucide-react";
+
+const EMAIL_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+const EMAIL_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+const EMAIL_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
 
 const ContactSection = () => {
+
+
+  const [startDate] = React.useState<Date | undefined>()
+  const [emailLoading, setEmailLoading] = React.useState<boolean>(false);
+
+  async function handleSubmit(
+    event: React.FormEvent<HTMLFormElement>
+  ) {
+    event.preventDefault()
+
+    const form = event.currentTarget
+    const formData = new FormData(form)
+
+    setEmailLoading(true)
+
+    try {
+      await emailjs.send(
+        EMAIL_SERVICE_ID || "",
+        EMAIL_TEMPLATE_ID || "",
+        {
+          user_name: formData.get("name"),
+          to_email: "blacklabsx@gmail.com",
+          time: formatDate(startDate || new Date(), "PPP"),
+          user_email: formData.get("email"),
+          budget: "From contact us",
+          project_type: "From contact us",
+          company_name: formData.get("company"),
+          details: formData.get("message"),
+        },
+        EMAIL_PUBLIC_KEY
+      )
+
+      form.reset()
+
+      setEmailLoading(false)
+
+      toast.add({
+        title: "Project Request Submitted Successfully",
+        description:
+          "We Will reach You very Soon By Your Email provided in the form",
+      })
+    } catch {
+
+      setEmailLoading(false)
+
+      toast.add({
+        title: "Project Request Failed",
+        description:
+          "Your Project Submission Failed Due to an unknown error, please try again",
+      })
+    }
+  }
+
   return (
     <div className="flex flex-col z-20 pt-20 min-h-svh md:max-w-7xl 2xl:max-w-[90em] mx-auto relative">
       <div className=" w-full rounded-2xl">
@@ -49,13 +113,7 @@ const ContactSection = () => {
                 We are always looking for ways to improve our products and services. Contact us and let us know how we can help you.
               </p>
 
-              <div className="mt-10 hidden flex-col items-center gap-4 md:flex-row lg:flex">
-                <p className="text-sm text-neutral-500 dark:text-neutral-400">contact@yoursaas.ai</p>
-                <div className="h-1 w-1 rounded-full bg-neutral-500 dark:bg-neutral-400" />
-                <p className="text-sm text-neutral-500 dark:text-neutral-400">+1 (800) 123 XX21</p>
-                <div className="h-1 w-1 rounded-full bg-neutral-500 dark:bg-neutral-400" />
-                <p className="text-sm text-neutral-500 dark:text-neutral-400">support@yoursaas.ai</p>
-              </div>
+            
 
               {/* World map with floating badge */}
               <div className="div relative mt-20 flex w-150 shrink-0 -translate-x-10 items-center justify-center perspective-midrange transform-3d sm:translate-x-0 lg:-translate-x-32">
@@ -102,7 +160,7 @@ const ContactSection = () => {
             </div>
 
             {/* Right column – contact form */}
-            <div className="relative mx-auto flex w-full max-w-2xl flex-col items-start gap-4 overflow-hidden  p-4 sm:p-10 bg-background rounded-4xl [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] shadow-2xl">
+            <form onSubmit={handleSubmit} className="relative mx-auto flex w-full max-w-2xl flex-col items-start gap-4 overflow-hidden  p-4 sm:p-10 bg-background rounded-4xl [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] shadow-2xl">
               {/* Decorative background pattern */}
               <div className="pointer-events-none absolute top-0 left-1/2 -mt-2 -ml-20 h-full w-full mask-[linear-gradient(white,transparent)]">
                 <div className="absolute inset-0 bg-linear-to-r from-zinc-900/30 to-zinc-900/30 mask-[radial-gradient(farthest-side_at_top,white,transparent)] opacity-10 dark:from-zinc-900/30 dark:to-zinc-900/30">
@@ -140,6 +198,7 @@ const ContactSection = () => {
                 </label>
                 <input
                   id="name"
+                  name="name"
                   placeholder="Manu Arora"
                   className="shadow-input h-10 w-full rounded-3xl border border-transparent bg-gray-100 pl-4 text-sm text-neutral-700 placeholder-neutral-500 outline-none focus:ring-2 focus:ring-neutral-800 focus:outline-none active:outline-none dark:border-neutral-800 dark:bg-neutral-900 dark:text-white"
                   type="text"
@@ -152,6 +211,7 @@ const ContactSection = () => {
                 </label>
                 <input
                   id="email"
+                  name="email"
                   placeholder="support@aceternity.com"
                   className="shadow-input h-10 w-full rounded-3xl border border-transparent bg-gray-100 pl-4 text-sm text-neutral-700 placeholder-neutral-500 outline-none focus:ring-2 focus:ring-neutral-800 focus:outline-none active:outline-none dark:border-neutral-800 dark:bg-neutral-900 dark:text-white"
                   type="email"
@@ -164,6 +224,7 @@ const ContactSection = () => {
                 </label>
                 <input
                   id="company"
+                  name="company"
                   placeholder="Aceternity Labs LLC"
                   className="shadow-input h-10 w-full rounded-3xl border border-transparent bg-gray-100 pl-4 text-sm text-neutral-700 placeholder-neutral-500 outline-none focus:ring-2 focus:ring-neutral-800 focus:outline-none active:outline-none dark:border-neutral-800 dark:bg-neutral-900 dark:text-white"
                   type="text"
@@ -176,16 +237,22 @@ const ContactSection = () => {
                 </label>
                 <textarea
                   id="message"
+                  name="message"
                   rows={5}
                   placeholder="Type your message here"
                   className="shadow-input w-full rounded-3xl border border-transparent bg-gray-100 pt-4 pl-4 text-sm text-neutral-700 placeholder-neutral-500 outline-none focus:ring-2 focus:ring-neutral-800 focus:outline-none active:outline-none dark:border-neutral-800 dark:bg-neutral-900 dark:text-white"
                 />
               </div>
 
-              <button className="relative z-10 flex items-center justify-center rounded-xl border border-transparent bg-neutral-800 px-5 py-2 text-sm font-medium text-white shadow-[0px_1px_0px_0px_#FFFFFF20_inset] transition duration-200 hover:bg-neutral-900 md:text-sm">
-                Submit
+              <button
+                type="submit"
+                disabled={emailLoading}
+                className="relative z-10 min-w-24 md:min-w-48 bg-blue-500 hover:bg-blue-600 shadow-2xl flex items-center justify-center rounded-xl border border-transparent px-5 py-2 text-sm font-medium text-white  transition duration-200 md:text-sm">
+                {emailLoading ? <Loader className="animate-spin" /> : "Submit"}
               </button>
-            </div>
+            </form>
+
+
           </div>
         </div>
       </div>
