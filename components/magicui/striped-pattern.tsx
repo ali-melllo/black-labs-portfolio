@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useId } from "react"
 
 import { cn } from "@/lib/utils"
@@ -6,7 +8,7 @@ interface StripedPatternProps extends React.SVGProps<SVGSVGElement> {
   direction?: "left" | "right"
 }
 
-export function StripedPattern({
+export default function StripedPattern({
   direction = "left",
   className,
   width = 10,

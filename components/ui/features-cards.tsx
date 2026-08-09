@@ -1,4 +1,5 @@
-import React from 'react'
+"use client"
+
 import { ChartColumn, Puzzle, Zap } from "lucide-react";
 
 export default function FeaturesCards() {

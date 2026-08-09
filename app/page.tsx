@@ -1,22 +1,9 @@
 "use client"
 
 import dynamic from "next/dynamic";
-
-import { StripedPattern } from "@/components/magicui/striped-pattern";
-import { HeroSection } from "@/components/ui/hero-section";
-import FeaturesSection from "@/components/ui/features-section";
-import ScaleSection from "@/components/ui/scale-section";
-
-
 import { TEMPLATES } from "@/lib/utils";
 
 
-// Below-the-fold sections are code-split via next/dynamic. `ssr` stays on
-// (the default) so the server still renders full HTML for each of these —
-// nothing about what's visible or when it appears changes. The only effect
-// is that each chunk's JS is split out of the main bundle instead of all
-// being parsed/executed up front, which is what actually speeds up the
-// initial load.
 const FeaturesCards = dynamic(() => import("@/components/ui/features-cards"));
 const TemplateDemo = dynamic(() => import("@/components/ui/template-demo"));
 const CompaniesLogos = dynamic(() => import("@/components/ui/companies-logos"));
@@ -26,6 +13,12 @@ const AiIntegration = dynamic(() => import("@/components/ui/ai-integration"));
 const Reviews = dynamic(() => import("@/components/ui/reviews"));
 const EffortlessScheduling = dynamic(() => import("@/components/ui/schedule"));
 const FooterPreview = dynamic(() => import("@/components/ui/footer"));
+const ScaleSection = dynamic(() => import("@/components/ui/scale-section"));
+const FeaturesSection = dynamic(() => import("@/components/ui/features-section"));
+const HeroSection = dynamic(() => import("@/components/ui/hero-section"));
+const StripedPattern = dynamic(() => import("@/components/magicui/striped-pattern"));
+
+
 
 export default function Page() {
   return (

@@ -1,4 +1,5 @@
-import React from 'react'
+"use client"
+
 import { OrbitingCircles } from "./orbiting-circles";
 import { Icons } from "@/lib/icons/icons";
 import { Globe } from "./globe";

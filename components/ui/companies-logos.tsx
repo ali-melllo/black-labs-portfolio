@@ -13,7 +13,7 @@ export default function CompaniesLogos() {
                 {LOGOS.map((review) => (
                     <Image
                         alt={review.alt}
-                        className="w-20 h-20 object-cover rounded-xl mx-2 grayscale-100 opacity-40"
+                        className="w-20 h-20 object-cover rounded-xl mx-2 grayscale-100 opacity-40 md:opacity-30"
                         src={review.img}
                         key={review.img}
                         width={100}

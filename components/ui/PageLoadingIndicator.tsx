@@ -121,8 +121,8 @@ function LoadingBar() {
   if (!isLoading) return null;
 
   return (
-    <div className="fixed top-0 z-2000 inset-x-0 h-1 w-screen">
-      <div className="h-full w-full animate-loader absolute rounded-full bg-muted" />
+    <div className="fixed top-0 z-2000 inset-x-0 h-1 w-screen ">
+      <div className="h-full w-full animate-loader absolute rounded-4xl bg-blue-500 dark:bg-muted-foreground/70" />
     </div>
   );
 }
