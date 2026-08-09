@@ -13,8 +13,6 @@ export function Header() {
   const scrolled = useScroll(15);
   const { theme } = useTheme();
 
-  const [open, setOpen] = useState(false)
-
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -23,29 +21,14 @@ export function Header() {
   }, []);
 
 
-
-  useEffect(() => {
-    const mediaQuery: MediaQueryList = window.matchMedia("(min-width: 768px)")
-    const handleMediaQueryChange = () => {
-      setOpen(false)
-    }
-
-    mediaQuery.addEventListener("change", handleMediaQueryChange)
-    handleMediaQueryChange()
-
-    return () => {
-      mediaQuery.removeEventListener("change", handleMediaQueryChange)
-    }
-  }, [])
-
   if (!mounted) return null;
 
 
   return <header
     className={cn(
       "fixed inset-x-0 z-50 mx-auto flex max-w-full transform-gpu animate-slide-down-fade justify-center items-center overflow-hidden  border border-transparent  p-3 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1.03)] will-change-transform",
-      open === true ? "h-52" : "h-20",
-      scrolled || open === true
+      
+      scrolled 
         ? "backdrop-blur-nav rounded-4xl rounded-t-none md:mt-2 md:rounded-t-4xl md:max-w-[79em] 2xl:max-w-[89em] bg-background [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] shadow-xl shadow-black/5 dark:border-white/15 dark:bg-black"
         : "bg-transparent backdrop-blur-3xl",
     )}
@@ -60,7 +43,7 @@ export function Header() {
           <span className="sr-only">Company logo</span>
 
           <div className="size-12 rounded-full">
-            <Icons.main fill={theme === "dark" ? "#ffffff" : "#000000"} />
+            <Icons.main fill={theme === "light" ? "#000000" : "#ffffff"} />
           </div>
 
           <span className="mt-1 font-bold">Black Labs</span>
@@ -102,36 +85,29 @@ export function Header() {
         <div className="hidden md:flex gap-x-2 items-center">
           {/* <LanguageSwitcher /> */}
 
-
           <ModeToggle />
-          {/* <Link
-            className="px-5 py-2 shadow font-bold bg-linear-to-br from-blue-500 to-indigo-500 text-white text-sm rounded-xl"
-            href={"#"}
-          >
-            Request Project
-          </Link> */}
+        
           <RequestProjectModal />
         </div>
 
-        <div className="flex gap- md:hidden">
+        <div className="flex  md:hidden">
           <ModeToggle />
 
           <RequestProjectModal />
-
         </div>
       </div>
 
       <nav
         className={cn(
           "my-6 flex text-lg ease-in-out will-change-transform md:hidden",
-          open ? "" : "hidden",
         )}
       >
         <ul className="space-y-4 font-medium">
-          <li onClick={() => setOpen(false)}>
+          <li>
             <Link
               href={"/"}
-            >Home</Link>
+            >Home
+            </Link>
           </li>
         </ul>
       </nav>

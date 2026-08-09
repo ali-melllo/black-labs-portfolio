@@ -3,10 +3,20 @@
 
 import { Icons } from '@/lib/icons/icons';
 import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 
 const FooterPreview = () => {
 
   const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+  }, []);
+
+
+  if (!mounted) return null;
 
   return (
     <footer className="overflow-hidden mt-30 md:mt-60 border-neutral-200 bg-neutral-100 dark:border-neutral-800 dark:bg-neutral-900">

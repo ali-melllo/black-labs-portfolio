@@ -131,7 +131,7 @@ export const Icons = {
       preserveAspectRatio="xMidYMid meet">
 
       <g transform="translate(0.000000,625.000000) scale(0.100000,-0.100000)"
-        fill={fill || "#000000"} stroke="none">
+        fill={fill} stroke="none">
         <path d="M1599 5297 c-185 -69 -277 -269 -208 -452 26 -70 101 -151 166 -180
 23 -10 44 -25 45 -33 2 -9 2 -288 0 -621 l-2 -606 -48 -27 c-62 -35 -118 -92
 -150 -153 -23 -44 -27 -62 -27 -145 0 -88 3 -101 33 -163 34 -68 88 -120 169
