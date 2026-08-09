@@ -49,14 +49,12 @@ const BUDGET_RANGES = [
     { value: "40k-plus", label: "$40,000+" },
 ]
 
-const TRIGGER_CLASSNAME =
-    "px-5 py-2 shadow font-extrabold bg-linear-to-br from-blue-500 to-indigo-500 text-white text-sm rounded-xl"
-
     const EMAIL_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
     const EMAIL_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
     const EMAIL_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
-export function RequestProjectModal() {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function RequestProjectModal({TRIGGER_CLASSNAME , TEXT , ICON} : {TRIGGER_CLASSNAME : string , TEXT : string , ICON?: any}) {
 
     const [open, setOpen] = React.useState(false)
 
@@ -108,9 +106,10 @@ export function RequestProjectModal() {
 
     return (
         <Drawer swipeDirection={isMobile ? "down" : "right"} open={open} onOpenChange={setOpen}>
-            <DrawerTrigger>
+            <DrawerTrigger className={"flex justify-center items-center"}>
                 <span className={TRIGGER_CLASSNAME}>
-                    Request Project
+                    {TEXT}
+                    {ICON && ICON}
                 </span>
             </DrawerTrigger>
 

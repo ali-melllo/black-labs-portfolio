@@ -15,10 +15,11 @@ import { SplineScene } from "@/components/ui/3d-robot";
 import { AuroraText } from "./aurora-text";
 import { Code, Computer } from "lucide-react";
 import Link from "next/link";
+import { RequestProjectModal } from "./request-project";
 
 const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
 
-export default function HeroSection(){
+export default function HeroSection() {
     const { resolvedTheme } = useTheme();
 
     const color = useMotionValue(COLORS_TOP[0]);
@@ -86,10 +87,14 @@ export default function HeroSection(){
                             <Computer size={22} />
                             Browse Templates
                         </Link>
-                        <button className={"bg-primary w-56 md:w-64 rounded-2xl hover:scale-105 transition-all duration-300 text-background h-12 flex justify-center items-center gap-2 text-base p-3 z-30 font-bold [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] shadow-xl"}>
-                            <Code size={22} />
-                            Order A Project
-                        </button>
+
+                        <RequestProjectModal
+                            ICON={<Code size={22} />}
+                            TEXT="Order A Project"
+                            TRIGGER_CLASSNAME="bg-primary w-56 md:w-64 rounded-2xl hover:scale-105 transition-all duration-300 text-background h-12 flex justify-center items-center gap-2 text-base p-3 z-30 font-bold [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] shadow-xl"
+                        />
+
+
                     </div>
                 </div>
 
@@ -127,7 +132,7 @@ export default function HeroSection(){
             </motion.section>
 
 
-           
+
 
         </div>
     );
