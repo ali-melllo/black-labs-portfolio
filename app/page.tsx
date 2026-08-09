@@ -48,7 +48,7 @@ export default function Page() {
         <ScaleSection />
       </section>
 
-      <section className="mt-48">
+      <section className="mt-40">
         <FeaturesSection />
       </section>
 

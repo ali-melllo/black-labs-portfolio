@@ -1,9 +1,8 @@
 "use client"
 
 import * as React from "react"
-import { format } from "date-fns"
-import { CalendarIcon } from "lucide-react"
-
+import { format, formatDate } from "date-fns"
+import { CalendarIcon, Loader } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -32,6 +31,8 @@ import {
     DrawerTrigger,
 } from "@/components/ui/drawer"
 import { useIsMobile } from "@/hooks/use-mobile"
+import { toast } from "./toast"
+import emailjs from "@emailjs/browser";
 
 const PROJECT_TYPES = [
     { value: "website", label: "Website" },
@@ -48,147 +49,62 @@ const BUDGET_RANGES = [
     { value: "40k-plus", label: "$40,000+" },
 ]
 
-// ---------------------------------------------------------------------------
-// Form fields
-// ---------------------------------------------------------------------------
-
-function RequestProjectForm({ onSubmitted }: { onSubmitted: () => void }) {
-    const [startDate, setStartDate] = React.useState<Date | undefined>()
-
-    function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-        event.preventDefault()
-        const formData = new FormData(event.currentTarget)
-        const payload = {
-            name: formData.get("name"),
-            email: formData.get("email"),
-            company: formData.get("company"),
-            projectType: formData.get("projectType"),
-            budget: formData.get("budget"),
-            startDate,
-            details: formData.get("details"),
-        }
-
-        // TODO: wire this up to your actual submission endpoint.
-        console.log("Project request submitted:", payload)
-
-        onSubmitted()
-    }
-
-    return (
-        <form
-            id="request-project-form"
-            onSubmit={handleSubmit}
-            className="grid gap-5 px-4 md:px-0"
-        >
-            <div className="grid gap-4 sm:grid-cols-2">
-                <div className="grid gap-2">
-                    <Label htmlFor="name">Full name</Label>
-                    <Input className="py-5" id="name" name="name" placeholder="Jane Doe" required />
-                </div>
-                <div className="grid gap-2">
-                    <Label htmlFor="email">Email</Label>
-                    <Input className="py-5" id="email" name="email" type="email" placeholder="jane@company.com" required />
-                </div>
-            </div>
-
-            <div className="grid gap-2">
-                <Label htmlFor="company">Company (optional)</Label>
-                <Input className="py-5" id="company" name="company" placeholder="Acme Inc." />
-            </div>
-
-            <div className="grid gap-4 sm:grid-cols-2">
-                <div className="grid gap-2">
-                    <Label htmlFor="projectType">Project type</Label>
-                    <Select name="projectType" required>
-                        <SelectTrigger id="projectType" className="w-full py-5">
-                            <SelectValue placeholder="Select a type" />
-                        </SelectTrigger>
-                        <SelectContent>
-                            {PROJECT_TYPES.map((type) => (
-                                <SelectItem key={type.value} value={type.value}>
-                                    {type.label}
-                                </SelectItem>
-                            ))}
-                        </SelectContent>
-                    </Select>
-                </div>
-
-                <div className="grid gap-2">
-                    <Label htmlFor="budget">Budget</Label>
-                    <Select name="budget">
-                        <SelectTrigger id="budget" className="w-full py-5">
-                            <SelectValue placeholder="Select a range" />
-                        </SelectTrigger>
-                        <SelectContent>
-                            {BUDGET_RANGES.map((range) => (
-                                <SelectItem key={range.value} value={range.value}>
-                                    {range.label}
-                                </SelectItem>
-                            ))}
-                        </SelectContent>
-                    </Select>
-                </div>
-            </div>
-
-            <div className="grid gap-2">
-                <Label htmlFor="startDate">
-                <CalendarIcon className="size-5" />
-
-                    Preferred start date
-                    </Label>
-                <Popover>
-                    <PopoverTrigger className={"flex items-center justify-center! bg-amber-"}>
-                        <span
-                            id="startDate"
-                            className={cn(
-                                "w-full font-normal border border-dashed border-muted-foreground/50 mt-2 rounded-2xl py-3",
-                                !startDate && "text-muted-foreground",
-                            )}
-                        >
-                            {startDate ? format(startDate, "PPP") : <span>Pick a date</span>}
-                        </span>
-                    </PopoverTrigger>
-                    <PopoverContent className="w-auto p-0" align="start">
-                        <Calendar
-                            mode="single"
-                            selected={startDate}
-                            onSelect={setStartDate}
-                            disabled={(date) => date < new Date(new Date().setHours(0, 0, 0, 0))}
-                        //   initialFocus
-                        />
-                    </PopoverContent>
-                </Popover>
-            </div>
-
-            <div className="grid gap-2">
-                <Label htmlFor="details">Project details</Label>
-                <Textarea
-                    id="details"
-                    name="details"
-                    placeholder="Tell us a bit about what you're looking to build..."
-                    className="min-h-28 resize-none"
-                />
-            </div>
-        </form>
-    )
-}
-
-// ---------------------------------------------------------------------------
-// Drawer — used for every screen size. Responsiveness is handled purely
-// with Tailwind breakpoints on DrawerContent (full-width bottom sheet on
-// mobile, a centered/rounded panel on larger screens), no JS media-query
-// hook involved.
-// ---------------------------------------------------------------------------
-
 const TRIGGER_CLASSNAME =
     "px-5 py-2 shadow font-extrabold bg-linear-to-br from-blue-500 to-indigo-500 text-white text-sm rounded-xl"
 
+    const EMAIL_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const EMAIL_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const EMAIL_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
 export function RequestProjectModal() {
+
     const [open, setOpen] = React.useState(false)
 
-    const  isMobile  = useIsMobile();
+    const isMobile = useIsMobile();
 
-    const handleSubmitted = () => setOpen(false)
+    const [startDate, setStartDate] = React.useState<Date | undefined>()
+    const [emailLoading, setEmailLoading] = React.useState<boolean>(false);
+
+    async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+        event.preventDefault()
+        const formData = new FormData(event.currentTarget)
+
+        setEmailLoading(true);
+
+        try {
+            await emailjs.send(
+                EMAIL_SERVICE_ID || "",
+                EMAIL_TEMPLATE_ID || "",
+                {
+                    user_name: formData.get("name"),
+                    to_email: "blacklabsx@gmail.com",
+                    time: `${formatDate(startDate || new Date(), "PPP")}`,
+                    user_email: formData.get("email"),
+                    budget: formData.get("budget"),
+                    project_type: formData.get("projectType"),
+                    company_name: formData.get("company"),
+                    details: formData.get("details"),
+                },
+                EMAIL_PUBLIC_KEY
+            );
+
+            setEmailLoading(false);
+            toast.add({
+                title: "Project Request Submitted Successfully",
+                description: "We Will reach You very Soon By Your Email provided in the form"
+
+            })
+            setOpen(false);
+        } catch ( err ) {
+            console.log(err)
+            setEmailLoading(false);
+            toast.add({
+                title: "Project Request Failed",
+                description: "Your Project Submission Failed Due to a Unknown error , please try again"
+
+            })
+        }
+    }
 
     return (
         <Drawer swipeDirection={isMobile ? "down" : "right"} open={open} onOpenChange={setOpen}>
@@ -208,15 +124,114 @@ export function RequestProjectModal() {
                     </DrawerHeader>
 
                     <div>
-                        <RequestProjectForm onSubmitted={handleSubmitted} />
+                        <form
+                            id="request-project-form"
+                            onSubmit={handleSubmit}
+                            className="grid gap-5 px-4 md:px-0"
+                        >
+                            <div className="grid gap-4 sm:grid-cols-2">
+                                <div className="grid gap-2">
+                                    <Label htmlFor="name">Full name</Label>
+                                    <Input className="py-5" id="name" name="name" placeholder="Jane Doe" required />
+                                </div>
+                                <div className="grid gap-2">
+                                    <Label htmlFor="email">Email</Label>
+                                    <Input className="py-5" id="email" name="email" type="email" placeholder="jane@company.com" required />
+                                </div>
+                            </div>
+
+                            <div className="grid gap-2">
+                                <Label htmlFor="company">Company (optional)</Label>
+                                <Input className="py-5" id="company" name="company" placeholder="Acme Inc." />
+                            </div>
+
+                            <div className="grid gap-4 sm:grid-cols-2">
+                                <div className="grid gap-2">
+                                    <Label htmlFor="projectType">Project type</Label>
+                                    <Select name="projectType" required>
+                                        <SelectTrigger id="projectType" className="w-full py-5">
+                                            <SelectValue placeholder="Select a type" />
+                                        </SelectTrigger>
+                                        <SelectContent>
+                                            {PROJECT_TYPES.map((type) => (
+                                                <SelectItem key={type.value} value={type.value}>
+                                                    {type.label}
+                                                </SelectItem>
+                                            ))}
+                                        </SelectContent>
+                                    </Select>
+                                </div>
+
+                                <div className="grid gap-2">
+                                    <Label htmlFor="budget">Budget</Label>
+                                    <Select name="budget">
+                                        <SelectTrigger id="budget" className="w-full py-5">
+                                            <SelectValue placeholder="Select a range" />
+                                        </SelectTrigger>
+                                        <SelectContent>
+                                            {BUDGET_RANGES.map((range) => (
+                                                <SelectItem key={range.value} value={range.value}>
+                                                    {range.label}
+                                                </SelectItem>
+                                            ))}
+                                        </SelectContent>
+                                    </Select>
+                                </div>
+                            </div>
+
+                            <div className="grid gap-2">
+                                <Label htmlFor="startDate">
+                                    <CalendarIcon className="size-5" />
+
+                                    Preferred start date
+                                </Label>
+                                <Popover>
+                                    <PopoverTrigger className={"flex items-center justify-center! bg-amber-"}>
+                                        <span
+                                            id="startDate"
+                                            className={cn(
+                                                "w-full font-normal border border-dashed border-muted-foreground/50 mt-2 rounded-2xl py-3",
+                                                !startDate && "text-muted-foreground",
+                                            )}
+                                        >
+                                            {startDate ? format(startDate, "PPP") : <span>Pick a date</span>}
+                                        </span>
+                                    </PopoverTrigger>
+                                    <PopoverContent className="w-auto p-0" align="start">
+                                        <Calendar
+                                            mode="single"
+                                            selected={startDate}
+                                            onSelect={setStartDate}
+                                            disabled={(date) => date < new Date(new Date().setHours(0, 0, 0, 0))}
+                                        //   initialFocus
+                                        />
+                                    </PopoverContent>
+                                </Popover>
+                            </div>
+
+                            <div className="grid gap-2">
+                                <Label htmlFor="details">Project details</Label>
+                                <Textarea
+                                    id="details"
+                                    name="details"
+                                    placeholder="Tell us a bit about what you're looking to build..."
+                                    className="min-h-28 resize-none"
+                                />
+                            </div>
+                        </form>
                     </div>
 
                     <DrawerFooter className="flex-row gap-2 md:px-0 pt-7 md:pt-4 sm:flex-row-reverse justify-between">
-                        <Button type="submit" form="request-project-form" className="flex-1 py-5 font-bold rounded-xl bg-linear-to-br from-blue-500 to-indigo-500 sm:flex-none">
-                            Submit request
+                        <Button
+                            disabled={emailLoading}
+                            type="submit"
+                            form="request-project-form"
+                            className=" min-w-24 md:min-w-40 text-white py-5 font-bold flex justify-center items-center rounded-xl bg-linear-to-br from-blue-500 to-indigo-500 sm:flex-none"
+                        >
+                            {emailLoading ? <Loader className="animate-spin" /> : "Submit request"}
                         </Button>
-                        <DrawerClose className={" min-w-24 rounded-xl border-2"}>
-                                Cancel
+                        <DrawerClose disabled={emailLoading} className={"min-w-24 md:min-w-40 rounded-xl border-2"}>
+                            Cancel
                         </DrawerClose>
                     </DrawerFooter>
                 </div>
