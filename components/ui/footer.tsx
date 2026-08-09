@@ -1,7 +1,13 @@
 
-import Image from 'next/image';
+"use client"
+
+import { Icons } from '@/lib/icons/icons';
+import { useTheme } from 'next-themes';
 
 const FooterPreview = () => {
+
+  const { theme } = useTheme();
+
   return (
     <footer className="overflow-hidden mt-30 md:mt-60 border-neutral-200 bg-neutral-100 dark:border-neutral-800 dark:bg-neutral-900">
       <div className="overflow-hidden rounded-lg bg-white shadow-sm dark:bg-neutral-950">
@@ -12,15 +18,9 @@ const FooterPreview = () => {
                 <div>
                   <div className="mr-0 mb-4 md:mr-4 md:flex-col">
 
-                    <div className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black">
-                      <div className="size-8 min-w-8 md:size-10 rounded-full">
-                        <Image
-                          width={50}
-                          height={50}
-                          src={"/assets/images/logo.webp"}
-                          alt={"Black Labs"}
-                          className=" w-full h-full rounded-full"
-                        />
+                    <div className="relative z-20 mr-4 flex items-center space-x-2  py-1 text-sm font-normal text-black">
+                      <div className="size-8 flex justify-center items-center min-w-8 md:size-10 rounded-full">
+                      <Icons.main fill={theme === "dark" ? "#ffffff" : "#000000"} />
                       </div>
                       <span className="font-extrabold text-black dark:text-white">Black Labs</span>
                     </div>

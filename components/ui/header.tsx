@@ -5,11 +5,13 @@ import Link from "next/link"
 import { useEffect, useState } from "react"
 import useScroll from "@/hooks/use-scroll"
 import { ModeToggle } from "./mode-toggle"
-import Image from "next/image"
 import { RequestProjectModal } from "./request-project"
+import { Icons } from "@/lib/icons/icons"
+import { useTheme } from "next-themes"
 
 export function Header() {
   const scrolled = useScroll(15);
+  const { theme } = useTheme();
 
   const [open, setOpen] = useState(false)
 
@@ -58,13 +60,7 @@ export function Header() {
           <span className="sr-only">Company logo</span>
 
           <div className="size-8 min-w-8 md:size-12 rounded-full">
-            <Image
-              width={50}
-              height={50}
-              src={"/assets/images/logo.webp"}
-              alt={"Black Labs"}
-              className=" w-full h-full rounded-full"
-            />
+            <Icons.main fill={theme === "dark" ? "#ffffff" : "#000000"} />
           </div>
 
           <span className="mt-1">Black Labs</span>
