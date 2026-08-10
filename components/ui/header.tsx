@@ -101,20 +101,6 @@ export function Header() {
         </div>
       </div>
 
-      <nav
-        className={cn(
-          "my-6 flex text-lg ease-in-out will-change-transform md:hidden",
-        )}
-      >
-        <ul className="space-y-4 font-medium">
-          <li>
-            <Link
-              href={"/"}
-            >Home
-            </Link>
-          </li>
-        </ul>
-      </nav>
     </div>
   </header>
 

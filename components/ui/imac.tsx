@@ -1,3 +1,5 @@
+"use client"
+
 import type { SVGProps } from "react"
 
 export interface MacProps extends SVGProps<SVGSVGElement> {

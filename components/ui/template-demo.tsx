@@ -21,7 +21,7 @@ type Items = {
 export default function TemplateDemo({ templates }: { templates: Items }) {
 
     return (
-        <div className="flex flex-col items-center mt-48 w-full overflow-hidden">
+        <div className="flex flex-col items-center mt-48 w-full max-w-svw overflow-hidden">
             <h1 className="text-3xl font-bold bg-opacity-50 bg-linear-to-t from-neutral-400 to-neutral-900  dark:from-neutral-50 dark:to-neutral-400 bg-clip-text! text-transparent md:mt-10 tracking-tighter md:text-5xl lg:text-7xl">
                 Our Projects & Templates
             </h1>
@@ -47,9 +47,9 @@ export default function TemplateDemo({ templates }: { templates: Items }) {
                                 className={`w-6/12 absolute h-80 scale-120 md:scale-110 z-10 ${isReversed ? "left-2 md:left-22" : "left-2 md:left-7"} bottom-0 md:bottom-1 `} />
                             <MacbookPro
                                 src={template.srcDesktop}
-                                className={`w-6/12 absolute h-60 z-10  ${isReversed ? "left-38 md:left-72 2xl:left-78" : "left-38 md:left-63"} -bottom-5 md:-bottom-5 `}
+                                className={`w-6/12 absolute h-60 z-10  ${isReversed ? "left-30 md:left-72 2xl:left-78" : "left-30 md:left-63"} bottom-0 md:-bottom-5 `}
                             />
-                            <div className={`w-27 md:w-36 absolute ${isReversed ? "left-[19em] md:left-[28em] 2xl:left-[33em]" : "left-[19em] md:left-[28em]"} top-19 md:top-0 z-0`}>
+                            <div className={`w-22 md:w-36 absolute ${isReversed ? "left-[15em] md:left-[28em] 2xl:left-[33em]" : "left-[15em] md:left-[28em]"} top-22 md:top-0 z-0`}>
                                 <Iphone src={template.srcMobile} />
                             </div>
                         </div>
