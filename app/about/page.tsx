@@ -1,10 +1,16 @@
+"use client"
+
 import { CinematicHero } from '@/components/ui/cinematic'
-import React from 'react'
+import { Header } from '@/components/ui/header'
 
 export default function page() {
     return (
-        <div className='h-[300vh]'>
-            <CinematicHero />
-        </div>
+        <>
+            <Header />
+
+            <div className='h-[300vh]'>
+                <CinematicHero />
+            </div>
+        </>
     )
 }

@@ -9,6 +9,7 @@ import { motion } from "framer-motion"
 import { Calendar, User, ArrowRight, Sparkles } from "lucide-react"
 import FooterPreview from "@/components/ui/footer"
 import { articles } from "@/lib/utils"
+import { Header } from "@/components/ui/header"
 
 
 
@@ -16,6 +17,9 @@ export default function BlogsPage() {
 
   
   return (
+    <>
+    <Header />
+
     <div className="flex flex-col z-20 pt-20 min-h-svh md:max-w-7xl 2xl:max-w-[90em] mx-auto relative">
       <main className="flex-1">
         <div className="px-4 py-12">
@@ -96,5 +100,6 @@ export default function BlogsPage() {
 
       <FooterPreview/>
     </div>
+    </>
   )
 }

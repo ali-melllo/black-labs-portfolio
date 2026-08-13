@@ -2,7 +2,6 @@
 
 import { cn } from "@/lib/utils"
 import Link from "next/link"
-import { useEffect, useState } from "react"
 import useScroll from "@/hooks/use-scroll"
 import { ModeToggle } from "./mode-toggle"
 import { RequestProjectModal } from "./request-project"
@@ -12,17 +11,6 @@ import { useTheme } from "next-themes"
 export function Header() {
   const scrolled = useScroll(15);
   const { theme } = useTheme();
-
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setMounted(true);
-  }, []);
-
-
-  if (!mounted) return null;
-
 
   return <header
     className={cn(

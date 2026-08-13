@@ -45,7 +45,7 @@ export default function HeroSection() {
 
     return (
         <div className="flex w-full flex-col">
-            <motion.section className="relative z-20 flex min-h-screen w-full items-center justify-center  bg-background py-24 text-foreground">
+            <motion.section className="relative z-20 flex min-h-screen w-full justify-center  bg-background py-24 text-foreground">
                 {/* Aurora Overlay */}
                 <motion.div
                     aria-hidden

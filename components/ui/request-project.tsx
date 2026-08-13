@@ -49,12 +49,12 @@ const BUDGET_RANGES = [
     { value: "40k-plus", label: "$40,000+" },
 ]
 
-    const EMAIL_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-    const EMAIL_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-    const EMAIL_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+const EMAIL_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+const EMAIL_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+const EMAIL_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function RequestProjectModal({TRIGGER_CLASSNAME , TEXT , ICON} : {TRIGGER_CLASSNAME : string , TEXT : string , ICON?: any}) {
+export function RequestProjectModal({ TRIGGER_CLASSNAME, TEXT, ICON }: { TRIGGER_CLASSNAME: string, TEXT: string, ICON?: any }) {
 
     const [open, setOpen] = React.useState(false)
 
@@ -93,7 +93,7 @@ export function RequestProjectModal({TRIGGER_CLASSNAME , TEXT , ICON} : {TRIGGER
 
             })
             setOpen(false);
-        } catch ( err ) {
+        } catch (err) {
             console.log(err)
             setEmailLoading(false);
             toast.add({
@@ -108,8 +108,8 @@ export function RequestProjectModal({TRIGGER_CLASSNAME , TEXT , ICON} : {TRIGGER
         <Drawer swipeDirection={isMobile ? "down" : "right"} open={open} onOpenChange={setOpen}>
             <DrawerTrigger className={"flex justify-center items-center"}>
                 <span className={TRIGGER_CLASSNAME}>
-                    {TEXT}
                     {ICON && ICON}
+                    {TEXT}
                 </span>
             </DrawerTrigger>
 

@@ -6,6 +6,7 @@ import emailjs from "@emailjs/browser";
 import { toast } from "@/components/ui/toast";
 import { formatDate } from "date-fns";
 import { Loader } from "lucide-react";
+import { Header } from "@/components/ui/header";
 
 const EMAIL_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
 const EMAIL_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
@@ -67,6 +68,9 @@ const ContactSection = () => {
   }
 
   return (
+    <>
+    <Header />
+
     <div className="flex flex-col z-20 pt-20 min-h-svh md:max-w-7xl 2xl:max-w-[90em] mx-auto relative">
       <div className=" w-full rounded-2xl">
         <div className="preview relative flex min-h-87.5 w-full justify-center p-2 sm:p-10 items-center">
@@ -257,6 +261,7 @@ const ContactSection = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

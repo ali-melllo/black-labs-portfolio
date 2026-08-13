@@ -2,6 +2,8 @@
 
 import dynamic from "next/dynamic";
 import { TEMPLATES } from "@/lib/utils";
+import { Header } from "@/components/ui/header";
+import { useEffect, useState } from "react";
 
 
 const FeaturesCards = dynamic(() => import("@/components/ui/features-cards"));
@@ -21,7 +23,18 @@ const StripedPattern = dynamic(() => import("@/components/magicui/striped-patter
 
 
 export default function Page() {
-  return (
+
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
+  return (<>
+    <Header />
 
     <div className="flex flex-col z-20  min-h-svh md:max-w-7xl 2xl:max-w-[90em] mx-auto relative">
       <div className="hidden md:flex h-full w-3 absolute inset-y-0 z-30 -left-3 shadow-2xl border flex-col items-center justify-center overflow-hidden">
@@ -74,6 +87,6 @@ export default function Page() {
 
       <FooterPreview />
     </div >
-
+  </>
   )
 }
