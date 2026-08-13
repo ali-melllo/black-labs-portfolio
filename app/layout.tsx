@@ -5,6 +5,14 @@ import { cn } from "@/lib/utils";
 import { Header } from "@/components/ui/header";
 import { Toaster } from "@/components/ui/toast";
 import PageLoadingIndicator from "@/components/ui/PageLoadingIndicator";
+import { Viewport } from "next";
+
+export const viewport: Viewport = {
+  initialScale: 1.0,
+  width: 'device-width',
+  maximumScale: 2.0,
+  minimumScale: 1.0
+}
 
 const notoSans = Noto_Sans({ subsets: ['latin'], variable: '--font-sans' })
 
