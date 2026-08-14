@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import { TEMPLATES } from "@/lib/utils";
 import { Header } from "@/components/ui/header";
 import { useEffect, useState } from "react";
+import LoadingLayout from "@/components/ui/Loading-layout";
 
 
 const FeaturesCards = dynamic(() => import("@/components/ui/features-cards"));
@@ -31,7 +32,7 @@ export default function Page() {
     setMounted(true);
   }, []);
 
-  if (!mounted) return null;
+  if (!mounted) return <LoadingLayout />
 
   return (<>
     <Header />
