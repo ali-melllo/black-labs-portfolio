@@ -15,7 +15,7 @@ const FeaturesGrid = dynamic(() => import("@/components/ui/features-grid"));
 const AiIntegration = dynamic(() => import("@/components/ui/ai-integration"));
 const Reviews = dynamic(() => import("@/components/ui/reviews"));
 const EffortlessScheduling = dynamic(() => import("@/components/ui/schedule"));
-const FooterPreview = dynamic(() => import("@/components/ui/footer"));
+const Footer = dynamic(() => import("@/components/ui/footer"));
 const ScaleSection = dynamic(() => import("@/components/ui/scale-section"));
 const FeaturesSection = dynamic(() => import("@/components/ui/features-section"));
 const HeroSection = dynamic(() => import("@/components/ui/hero-section"));
@@ -83,10 +83,11 @@ export default function Page() {
         <Reviews />
       </section>
 
+      <section>
+        <EffortlessScheduling />
+      </section>
 
-      <EffortlessScheduling />
-
-      <FooterPreview />
+      <Footer />
     </div >
   </>
   )

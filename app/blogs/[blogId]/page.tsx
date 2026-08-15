@@ -10,7 +10,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Separator } from "@/components/ui/separator"
 import { motion } from "framer-motion"
 import { Calendar, Clock, Share2, Sparkles, ThumbsUp } from "lucide-react"
-import FooterPreview from "@/components/ui/footer"
+import Footer from "@/components/ui/footer"
 import { toast } from "@/components/ui/toast"
 import { articles } from "@/lib/utils"
 
@@ -125,7 +125,7 @@ export default function BlogDetailPage() {
           </motion.div>
         </article>
       </main>
-      <FooterPreview />
+      <Footer />
     </div>
   )
 }

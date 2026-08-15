@@ -3,9 +3,10 @@
 
 import { Icons } from '@/lib/icons/icons';
 import { useTheme } from 'next-themes';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
-const FooterPreview = () => {
+const Footer = () => {
 
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -46,10 +47,10 @@ const FooterPreview = () => {
                   <div className="flex w-full flex-col justify-center space-y-4">
                     <p className="hover:text-text-neutral-800 font-bold text-neutral-600 transition-colors dark:text-neutral-300">Pages</p>
                     <ul className="hover:text-text-neutral-800 list-none space-y-4 text-neutral-600 transition-colors dark:text-neutral-300">
-                      <li className="list-none"><a className="hover:text-text-neutral-800 transition-colors" href="/projects">All Products</a></li>
-                      <li className="list-none"><a className="hover:text-text-neutral-800 transition-colors" href="/blogs">Blogs</a></li>
-                      <li className="list-none"><a className="hover:text-text-neutral-800 transition-colors" href="/contactUs">Contact Us</a></li>
-                      <li className="list-none"><a className="hover:text-text-neutral-800 transition-colors" href="/about">About</a></li>
+                      <li className="list-none"><Link className="hover:text-text-neutral-800 transition-colors" href="/projects">All Products</Link></li>
+                      <li className="list-none"><Link className="hover:text-text-neutral-800 transition-colors" href="/blogs">Blogs</Link></li>
+                      <li className="list-none"><Link className="hover:text-text-neutral-800 transition-colors" href="/contactUs">Contact Us</Link></li>
+                      <li className="list-none"><Link className="hover:text-text-neutral-800 transition-colors" href="/about">About</Link></li>
                     </ul>
                   </div>
                   <div className="flex flex-col justify-center space-y-4">
@@ -83,4 +84,4 @@ const FooterPreview = () => {
   );
 };
 
-export default FooterPreview;
+export default Footer;

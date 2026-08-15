@@ -37,19 +37,19 @@ export default function TemplateDemo({ templates }: { templates: Items }) {
                     <div
                         key={`template-${i}`}
                         className={cn(
-                            "flex flex-col md:flex-row w-full min-h-176 md:min-h-auto items-center justify-between px-10 md:gap-y-20 md:mt-40 ",
+                            "flex flex-col md:flex-row w-full h-176 md:h-100 items-center justify-between px-10 md:gap-y-20 md:mt-40 ",
                             isReversed && " flex-col md:flex-row-reverse"
                         )}
                     >
                         <div className={`w-full md:w-6/12 relative h-full flex items-center`}>
                             <IMac
                                 src={template.srcDesktop}
-                                className={`w-6/12 absolute h-80 scale-120 md:scale-110 z-10 ${isReversed ? "left-2 md:left-22" : "left-2 md:left-7"} bottom-0 md:bottom-1 `} />
+                                className={`w-6/12 absolute h-80 scale-120 md:scale-110 z-10 ${isReversed ? "left-2 md:left-22" : "left-2 md:left-7"} bottom-0 md:bottom-10 `} />
                             <MacbookPro
                                 src={template.srcDesktop}
-                                className={`w-6/12 absolute h-60 z-10  ${isReversed ? "left-30 md:left-72 2xl:left-78" : "left-30 md:left-63"} bottom-0 md:-bottom-5 `}
+                                className={`w-6/12 absolute h-60 z-10  ${isReversed ? "left-30 md:left-72 2xl:left-78" : "left-30 md:left-63"} bottom-0 md:bottom-5 `}
                             />
-                            <div className={`w-22 md:w-36 absolute ${isReversed ? "left-[15em] md:left-[28em] 2xl:left-[33em]" : "left-[15em] md:left-[28em]"} top-22 md:top-0 z-0`}>
+                            <div className={`w-22 md:w-36 absolute ${isReversed ? "left-[15em] md:left-[28em] 2xl:left-[33em]" : "left-[15em] md:left-[28em]"} md:bottom-20 z-0`}>
                                 <Iphone src={template.srcMobile} />
                             </div>
                         </div>

@@ -7,7 +7,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from "@/components/ui/badge"
 import { motion } from "framer-motion"
 import { Calendar, User, ArrowRight, Sparkles } from "lucide-react"
-import FooterPreview from "@/components/ui/footer"
+import Footer from "@/components/ui/footer"
 import { articles } from "@/lib/utils"
 import { Header } from "@/components/ui/header"
 
@@ -98,7 +98,7 @@ export default function BlogsPage() {
         </div>
       </main>
 
-      <FooterPreview/>
+      <Footer/>
     </div>
     </>
   )

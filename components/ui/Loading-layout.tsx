@@ -2,6 +2,7 @@
 
 import StripedPattern from "../magicui/striped-pattern"
 import { Skeleton } from "./skeleton"
+import { ThinkingOrb } from 'thinking-orbs';
 
 export default function LoadingLayout() {
     return (
@@ -30,9 +31,9 @@ export default function LoadingLayout() {
                 </div>
             </div>
 
-            <div className="flex flex-col items-center mt-20 md:max-w-7xl 2xl:max-w-[90em] mx-auto">
+            <div className="flex flex-col items-center pt-20 md:max-w-7xl 2xl:max-w-[90em] mx-auto">
                 <Skeleton className="h-8 w-100 rounded-4xl mt-28" />
-                <Skeleton className="h-20 w-250 rounded-[3em] mt-20" />
+                <Skeleton className="h-16 w-250 rounded-[4em] mt-20" />
                 <Skeleton className="h-4 w-170 rounded-4xl mt-10" />
                 <Skeleton className="h-4 w-150 rounded-4xl mt-3" />
                 <div className="flex w-full justify-center gap-10 items-center">
@@ -40,6 +41,11 @@ export default function LoadingLayout() {
                     <Skeleton className="h-12 w-60 rounded-4xl mt-10" />
                 </div>
             </div>
+
+            <div className="flex justify-center items-center mt-60">
+                <ThinkingOrb state="composing" size={64} />
+            </div>
+
         </div>
     )
 }
