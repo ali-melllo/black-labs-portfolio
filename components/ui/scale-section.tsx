@@ -5,7 +5,7 @@ const ScaleSection = () => {
   return (
     <div className="w-full py-20 relative">
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-extrabold mb-4">
+        <h2 className="text-3xl md:text-4xl font-extrabold mb-4 text-nowrap">
           Scale with <span className="text-blue-500">NO</span> issues
         </h2>
         <p className="text-muted-foreground text-sm max-w-2xl mx-auto">

@@ -37,7 +37,7 @@ export default function TemplateDemo({ templates }: { templates: Items }) {
                     <div
                         key={`template-${i}`}
                         className={cn(
-                            "flex flex-col md:flex-row w-full h-176 md:h-100 items-center justify-between px-10 md:gap-y-20 md:mt-40 ",
+                            "flex flex-col md:flex-row w-full h-176 md:h-100 items-center justify-between px-5 md:px-10 md:gap-y-20 md:mt-40 ",
                             isReversed && " flex-col md:flex-row-reverse"
                         )}
                     >
@@ -57,7 +57,7 @@ export default function TemplateDemo({ templates }: { templates: Items }) {
                         <div className="w-full md:w-5/12 gap-5 h-full items-center md:justify-center flex flex-col">
                             <h1 className="mt- text-left w-full font-bold text-lg md:text-3xl">{template.title}</h1>
                             <p className="text-left md:w-10/12 mr-auto text-xs md:text-sm">{template.description}</p>
-                            <div className="flex items-center mr-auto gap-2">
+                            <div className="flex items-center flex-wrap mr-auto gap-2">
                                 {template.tags.map((tag, i) => (
                                     <span key={`tag-template-${i}`} className="rounded-4xl text-nowrap px-2 py-1 font-medium text-xs bg-background flex justify-center items-center [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] shadow-xl">{tag}</span>
                                 ))}
@@ -78,7 +78,7 @@ export default function TemplateDemo({ templates }: { templates: Items }) {
             })}
 
 
-            <div className="w-full relative flex justify-center items-center md:mt-40">
+            <div className="w-full relative flex justify-center items-center mt-20 md:mt-40">
                 <Link
                     href={"/projects"}
                     className={`text-sm md:text-base w-full mx-10 md:w-80 font-bold text-background rounded-xl flex gap-2 hover:scale-105 transition-all duration-300 justify-center items-center h-12  bg-foreground  shadow-xl`}>

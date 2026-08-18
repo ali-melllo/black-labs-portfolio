@@ -42,7 +42,7 @@ export default function LoadingLayout() {
                 </div>
             </div>
 
-            <div className="flex justify-center items-center mt-50 md:mt-60">
+            <div className="flex justify-center items-center mt-20 md:mt-60">
                 <Loader className="animate-spin blur-[1px]" />
             </div>
 

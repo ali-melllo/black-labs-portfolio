@@ -103,7 +103,7 @@ export default function FeaturesSection() {
         <div className="h-full w-full md:w-4/12 flex flex-col gap-5">
 
             {/* Top Right Section */}
-            <div className="h-6/12 flex flex-col w-full relative overflow-hidden bg-background [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] shadow-xl shadow-black/5 dark:border-white/15 rounded-2xl">
+            <div className="h-[28em] md:h-6/12 flex flex-col w-full relative overflow-hidden bg-background [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] transform-gpu dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] shadow-xl shadow-black/5 dark:border-white/15 rounded-2xl">
                 <h1 className="text-xl font-bold z-20 px-5 pt-5 bg-opacity-50 bg-linear-to-t from-neutral-400 to-neutral-900  dark:from-neutral-50 dark:to-neutral-400 bg-clip-text! text-transparent  tracking-tighter">
                     Supporting Around All Devices
                 </h1>

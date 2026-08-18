@@ -101,9 +101,9 @@ export default function Reviews() {
   return (
     <section className="z-0 ">
       <div className=" mb-10">
-        <div className="flex flex-col items-center justify-center relative">
+        <div className="flex flex-col items-center justify-center relative px-3 md:px-0">
           {/* Header Section */}
-          <h1 className="text-3xl font-bold bg-opacity-50 bg-linear-to-t from-neutral-400 to-neutral-900 dark:from-neutral-50 dark:to-neutral-400 bg-clip-text! text-transparent md:mt-10 tracking-tighter md:text-5xl lg:text-7xl">
+          <h1 className="text-2xl text-center font-bold bg-opacity-50 bg-linear-to-t from-neutral-400 to-neutral-900 dark:from-neutral-50 dark:to-neutral-400 bg-clip-text! text-transparent md:mt-10 tracking-tighter md:text-5xl lg:text-7xl">
             Reviews & Feedbacks About US
           </h1>
 

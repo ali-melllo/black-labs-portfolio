@@ -180,7 +180,7 @@ const EffortlessScheduling = () => {
 
       {/* Content */}
       <div className="relative z-20 text-center">
-        <h1 className="text-2xl max-w-7/12 md:max-w-full mx-auto md:text-5xl font-extrabold text-foreground leading-tight mb-2">
+        <h1 className="text-xl max-w-7/12 md:max-w-full mx-auto md:text-5xl font-extrabold text-foreground leading-tight mb-2">
           Effortless Call <span className="text-orange-500">Scheduling</span>
           <br />
           That Makes your Life <span className="text-orange-500">Easier</span>

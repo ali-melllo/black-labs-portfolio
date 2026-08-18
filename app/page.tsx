@@ -52,7 +52,7 @@ export default function Page() {
         <div className="pointer-events-none block absolute h-28 bottom-0 right-0 w-6/12 bg-linear-to-l from-white dark:from-background"></div>
       </section>
 
-      <section className="mt-40">
+      <section className="mt-40 px-3 md:px-0">
         <ScaleSection />
       </section>
 
@@ -66,11 +66,11 @@ export default function Page() {
 
       <TemplateDemo templates={TEMPLATES} />
 
-      <section>
+      <section className="hidden md:block">
         <IntegrationCards />
       </section>
 
-      <section className="mt-120 md:mt-10 px-10">
+      <section className="mt-20 md:mt-10 px-10">
         <FeaturesGrid />
       </section>
 
