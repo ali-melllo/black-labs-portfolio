@@ -7,6 +7,16 @@ import { ModeToggle } from "./mode-toggle"
 import { RequestProjectModal } from "./request-project"
 import { Icons } from "@/lib/icons/icons"
 import { useTheme } from "next-themes"
+import { Button } from "@/components/ui/button"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import { Menu } from "lucide-react"
 
 export function Header() {
   const scrolled = useScroll(15);
@@ -34,11 +44,10 @@ export function Header() {
             <Icons.main fill={theme === "light" ? "#000000" : "#ffffff"} />
           </div>
 
-          <span className="mt-1 font-bold">Black Labs</span>
+          <span className="md:mt-1 text-nowrap text-sm md:text-base font-bold">Black Labs</span>
         </Link>
         <nav className="hidden md:absolute md:left-1/2 md:top-1/2 md:block md:-translate-x-1/2 md:-translate-y-1/2 md:transform">
           <div className="flex items-center gap-10 font-medium">
-
 
             <Link
               className="px-2 py-1 text-gray-900 dark:text-gray-50 font-semibold"
@@ -80,12 +89,66 @@ export function Header() {
             TRIGGER_CLASSNAME="px-5 py-2 shadow font-extrabold bg-linear-to-br from-blue-500 to-indigo-500 text-white text-sm rounded-xl" />
         </div>
 
-        <div className="flex  md:hidden">
-          <ModeToggle />
+        <div className="flex md:hidden gap-2 items-center">
 
           <RequestProjectModal
             TEXT="Request Project"
-            TRIGGER_CLASSNAME="px-5 py-2 shadow font-extrabold bg-linear-to-br from-blue-500 to-indigo-500 text-white text-sm rounded-xl" />
+            TRIGGER_CLASSNAME="px-2 md:px-5 py-1.5 md:py-2 shadow font-extrabold bg-linear-to-br from-blue-500 to-indigo-500 text-white text-xs md:text-sm rounded-xl"
+          />
+
+          <DropdownMenu>
+            <DropdownMenuTrigger
+              render={
+                <Button variant="outline" className={"flex rounded-xl justify-center items-center px-3 py-4"} >
+                  <Menu />
+                </Button>
+              }>
+              Open
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className={"pb-0"}>
+              <DropdownMenuGroup>
+                <DropdownMenuItem>
+                  <Link
+                    className=" py-1 font-semibold"
+                    href={"/projects"}
+                  >
+                    Projects
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link
+                    className=" py-1 font-semibold"
+                    href={"/about"}
+                  >
+                    About
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link
+                    className=" py-1 font-semibold"
+                    href={"/blogs"}
+                  >
+                    Blogs
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link
+                    className="py-1 font-semibold"
+                    href={"/contactUs"}
+                  >
+                    Contact Us
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator className={"mb-0"}/>
+
+                <DropdownMenuItem className={"font-semibold py-0 pr-5"}>
+                  Theme
+                  <ModeToggle />
+                </DropdownMenuItem>
+              </DropdownMenuGroup>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
         </div>
       </div>
 

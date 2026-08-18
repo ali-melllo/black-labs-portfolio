@@ -188,6 +188,17 @@
     }
   }
 
+  --animate-shimmer: shimmer 1s ease-in-out infinite;
+
+  @keyframes shimmer {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(100%);
+    }
+  }
+
   --animate-orbit: orbit calc(var(--duration)*1s) linear infinite;
 
   @keyframes orbit {

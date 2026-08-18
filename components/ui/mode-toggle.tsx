@@ -19,7 +19,7 @@ export function ModeToggle() {
   const checked = resolvedTheme === "dark";
 
   return (
-    <div className={`${styles.toggleWrapper} scale-50`}>
+    <div className={`${styles.toggleWrapper} scale-40 md:scale-50`}>
       <input
         id="dn"
         type="checkbox"

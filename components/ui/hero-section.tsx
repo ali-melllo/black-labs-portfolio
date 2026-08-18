@@ -99,8 +99,6 @@ export default function HeroSection() {
                 </div>
 
 
-
-
                 <div className="absolute z-20 -bottom-5 h-[25em] md:h-[30em] 2xl:h-[40em] pt-10 w-full overflow-hidden ">
                     <div className="relative h-full w-full flex-1">
                         <SplineScene

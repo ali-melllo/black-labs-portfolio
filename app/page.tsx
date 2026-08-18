@@ -22,7 +22,6 @@ const HeroSection = dynamic(() => import("@/components/ui/hero-section"));
 const StripedPattern = dynamic(() => import("@/components/magicui/striped-pattern"));
 
 
-
 export default function Page() {
 
   const [mounted, setMounted] = useState(false);
